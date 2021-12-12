@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const Personal = require("../modls/PersonalSchema");
+const Proudct = require("../modls/proudctSchema");
 const mongoose = require("mongoose")
 router.use(express.json());
 
@@ -43,21 +44,25 @@ router.get("/getPersonal/:id",async (req,res)=>{
 // })
 
 router.post("/addProudct", async(req,res)=>{
-const proudct = new proudct ({
-name:req.body.name,
-category:req.body.category ,
-description:req.body.description, 
-image:req.body.image,
+Personal.findByID({_id: req.body.personalId}).then(PUser=>{
+    console.log("Find"+PUser)
+    Proudct.create ({
+        name:req.body.name,
+        category:req.body.category ,
+        description:req.body.description, 
+        image:req.body.image,})
+}).then(proudct =>{Personal.findByIDAndUpdate(req.body.personalId,{$push:{proudct:proudct}})
 
 })
-try {await proudct.save()
-res.status(201)
-proudct.find().then((data)=>{res.json(data)})
-}
-catch(e){
-    console.error(e)
-}
-console.log("ADDED")
+
+// try {await proudct.save()
+// res.status(201)
+// proudct.find().then((data)=>{res.json(data)})
+// }
+// catch(e){
+//     console.error(e)
+// }
+// console.log("ADDED")
 
 })
 
