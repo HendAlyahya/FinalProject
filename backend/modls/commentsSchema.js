@@ -11,7 +11,7 @@ const commentsSchema = new Schema({
         ref:"Personal"
     },
 
-    product:{
+    proudct:{
         type: Schema.Types.ObjectID,
         ref:"proudct"
     }

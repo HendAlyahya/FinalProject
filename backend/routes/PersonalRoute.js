@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const Personal = require("../modls/PersonalSchema");
-const Proudct = require("../modls/proudctSchema");
+const Cart = require("../modls/CartSchema");
 const mongoose = require("mongoose")
 router.use(express.json());
 
@@ -12,8 +12,8 @@ router.get("/getAll",(req,res)=>{
 
 router.get("/getPersonal/:id",async (req,res)=>{
     try {
-        const author = await  Personal.findById(req.params.id )
-        res.send(Personal);
+        const user = await  Personal.findById(req.params.id )
+        res.send(user);
     } catch (e) {
         res.status(500).send()
         console.error(e)
@@ -43,28 +43,65 @@ router.get("/getPersonal/:id",async (req,res)=>{
 
 // })
 
+router.get("/getPersonal/:id",async (req,res)=>{
+    try {
+        const person = await Personal.findById(req.params.id)
+        await person.populate( 'proudct' );
+        res.send(person);
+    } catch (e) {
+        res.status(500).send()
+        console.error(e)
+    }
+})
+
 router.post("/addProudct", async(req,res)=>{
-Personal.findByID({_id: req.body.personalId}).then(PUser=>{
+Personal.findById({_id: req.body.personalId}).then(PUser=>{
     console.log("Find"+PUser)
-    Proudct.create ({
+    Proudct.create({
         name:req.body.name,
         category:req.body.category ,
         description:req.body.description, 
-        image:req.body.image,})
-}).then(proudct =>{Personal.findByIDAndUpdate(req.body.personalId,{$push:{proudct:proudct}})
-
+        image:req.body.image,
+        price:req.body.price}).then( proudct =>{
+    console.log(proudct)
+    Personal.findByIdAndUpdate(req.body.personalId,{$push:{proudct:proudct}}).then(async(user)=>{
+    await user.save()
+    res.send(user)
+}
+)
+}
+)})
 })
 
-// try {await proudct.save()
-// res.status(201)
-// proudct.find().then((data)=>{res.json(data)})
-// }
-// catch(e){
-//     console.error(e)
-// }
-// console.log("ADDED")
-
+router.post("/addCart", async(req,res)=>{Personal.findById({_id: req.body.personalId}).then(PUser=>{
+    console.log("Find"+PUser.cart)
+    if (PUser.cart== undefined ){
+      Cart.create({cart:{proudcts:req.body.proudct,qty:req.body.qty}}).then( cart =>{
+    console.log(cart)
+    Personal.findByIdAndUpdate(req.body.personalId,{cart:cart}).then(async(user)=>{
+    await user.save()
+    res.send(user)
+}
+    )}
+)   
+    } else{
+        Cart.updateOne({cart:{proudcts:req.body.proudct,qty:req.body.qty}}).then(async(cart)=>{
+            Personal.findByIdAndUpdate(req.body.personalId,{cart:cart}).then(async(user)=>{
+                await user.save()
+                res.send(user)
+        })
+            )
+        }
+    
+    
+   
 })
+});
+
+
+
+
+
 
 router.put("/update", (req, res) => {Personal.findOneAndUpdate({ _id: req.body.id },
 { Phone: req.body.Phone, Address: req.body.Address,image: req.body.image,

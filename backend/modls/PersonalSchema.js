@@ -10,6 +10,8 @@ const PersonalSchema = new Schema({
     image: { type: String, required: [true, "Personall image should be provided"] },
     gender: { type: String },
     proudct:[{type: Schema.Types.ObjectId, ref:"proudct"}],
+    cart:{type: Schema.Types.ObjectID,ref:"cart"},
+    
     userType:{
         type: String,
         enum:["buyer","seller"],
