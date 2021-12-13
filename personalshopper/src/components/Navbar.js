@@ -33,10 +33,10 @@ const Navbar = () => {
     </div>
   </div>
 </nav>
-{/* <div>
+<div>
 <Carousel>
   <Carousel.Item>
-    <img src="https://s3-media0.fl.yelpcdn.com/bphoto/m_kP0nNWkneWUGtD1XE1gw/o.jpg"height="500px"width='1500px'
+    <img src="https://www.fashionlabparis.com/wp-content/uploads/2018/05/personal_shopping-1600x541.jpg"height="500px"width='1500px'
       alt="First slide"
     />
     <Carousel.Caption>
@@ -45,7 +45,7 @@ const Navbar = () => {
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
-    <img src="https://i.pinimg.com/originals/22/5c/75/225c7513ab1508cdb428b1d7dcdc7729.jpg"height="500px"width='1500px'
+    <img src="https://lh3.googleusercontent.com/proxy/cXN38PGdzEsBINJPWPxVD9nEPEACzfeLUzDcxp8FdRehu69G0MC2kwC9yslTXA-qEBwjXjiFDr_R3fA8SUSowdZmiYUIq53B7c9H_ocEAGtkm9A8Y43WpFi5pd80hVu4suaGZ9U"height="500px"width='1500px'
       alt="Second slide"
     />
 
@@ -55,7 +55,7 @@ const Navbar = () => {
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
-    <img src="http://1.bp.blogspot.com/-MGk46DNTcCs/T2rhZT8fIOI/AAAAAAAAS1I/PmemWGT5BL8/s1600/IMG_9382.jpg"height="500px"width='1500px'
+    <img src="https://cdn.cliqueinc.com/posts/215587/5-items-a-celebrity-stylist-would-remove-from-your-closet-215587-main.700x0c.jpg"height="500px"width='1500px'
 
       alt="Third slide"
     />
@@ -66,7 +66,7 @@ const Navbar = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-</div> */}
+</div>
 
 </div>
 
