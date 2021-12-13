@@ -40,29 +40,26 @@ const Navbar = () => {
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
-    <img src="https://lh3.googleusercontent.com/proxy/cXN38PGdzEsBINJPWPxVD9nEPEACzfeLUzDcxp8FdRehu69G0MC2kwC9yslTXA-qEBwjXjiFDr_R3fA8SUSowdZmiYUIq53B7c9H_ocEAGtkm9A8Y43WpFi5pd80hVu4suaGZ9U"height="500px"width='1500px'
+    <img src="https://images.pexels.com/photos/135620/pexels-photo-135620.jpeg?cs=srgb&dl=pexels-shattha-pilabut-135620.jpg&fm=jpg"height="500px"width='1500px'
       alt="Second slide"
     />
 
     <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
-    <img src="https://cdn.cliqueinc.com/posts/215587/5-items-a-celebrity-stylist-would-remove-from-your-closet-215587-main.700x0c.jpg"height="500px"width='1500px'
+    <img src="https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"height="500px"width='1500px'
 
       alt="Third slide"
     />
 
     <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+   
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
