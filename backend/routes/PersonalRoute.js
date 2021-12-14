@@ -4,11 +4,17 @@ const Personal = require("../modls/PersonalSchema");
 const Cart = require("../modls/CartSchema");
 const mongoose = require("mongoose")
 router.use(express.json());
-
+const PersonalSeed =require("../Personal_seed")
 
 router.get("/getAll", (req, res) => {
     Personal.find({ userType: "seller" }).then((data) => { res.json(data) })
 })
+
+
+Personal.insertMany(PersonalSeed,(err,Personals)=>{
+    if (err){console.log(err)}
+    console.log("added",Personals)
+});
 
 router.get("/getPersonal/:id", async (req, res) => {
     try {
@@ -30,7 +36,8 @@ router.get("/getPersonal/:id", async (req, res) => {
 // Address:req.body.Address, 
 // image:req.body.image,
 // gender:req.body.gender,
-// Email:req.body.Email,
+// userType:req.body.userType,
+// email:req.body.Email,
 // })
 // try {await Personal.save()
 // res.status(201)
