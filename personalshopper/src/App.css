@@ -6,6 +6,19 @@
   height: 40vmin;
   pointer-events: none;
 }
+.list-unstyled{
+  font-size: small;
+  color: black;
+}
+
+.form-control{
+  border: 10%;
+}
+
+.nav-item{
+  list-style-type: none;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

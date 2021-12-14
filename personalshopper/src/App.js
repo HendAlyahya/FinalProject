@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar"
 
 function App() {
   return <Home></Home>;
-  <Navbar></Navbar>
+  <Navbar></Navbar>;
 //   <SingUp></SingUp>
   
   

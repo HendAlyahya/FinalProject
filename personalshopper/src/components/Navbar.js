@@ -29,11 +29,19 @@ const Navbar = () => {
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
         <button className="btn btn-outline-success" type="submit">Search</button>
+        
       </form>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <span class="badge badge-pill bg-danger">1</span>
+          <span><i class="fas fa-shopping-cart"></i></span>
+        </a>
+      </li>
     </div>
   </div>
 </nav>
 <div>
+
 <Carousel>
   <Carousel.Item>
     <img src="https://www.fashionlabparis.com/wp-content/uploads/2018/05/personal_shopping-1600x541.jpg"height="500px"width='1500px'
