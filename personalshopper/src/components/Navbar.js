@@ -11,6 +11,7 @@ import ReturnPolicy from "./ReturnPolicy"
 import AboutUs from "./AboutUs"
 import BestService from "./BestService"
 import PrivacyPolicy from "./PrivacyPolicy"
+import Cart from "./Cart"
 
 
 
@@ -44,7 +45,7 @@ const Navbar = () => {
         
       </form>
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="/Cart">
           <span class="badge badge-pill bg-danger">1</span>
           <span><i class="fas fa-shopping-cart"></i></span>
         </a>
@@ -65,6 +66,7 @@ const Navbar = () => {
           <Route  path="/AboutUs" element={<AboutUs />} />
           <Route  path="/BestService" element={<BestService />} />
           <Route  path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+          <Route  path="/Cart" element={<Cart />} />
           
  </Routes>  
 </div>
