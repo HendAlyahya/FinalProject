@@ -5,6 +5,7 @@ import { Route, Routes, Link , useNavigate} from "react-router-dom";
 import Home from './Home'
 import Shoper from './Shoper'
 import SingUp from './SingUp'
+import PaymentMethod from "./PaymentMethod"
 
 
 
@@ -53,6 +54,7 @@ const Navbar = () => {
           <Route exact path="/Home" element={<Home />} />
           <Route  path="/shoper" element={<Shoper />} />
           <Route  path="/singup" element={<SingUp />} />
+          <Route  path="/PaymentMethod" element={<PaymentMethod />} />
           
  </Routes>  
 </div>
