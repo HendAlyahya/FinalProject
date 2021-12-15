@@ -18,6 +18,25 @@
 .nav-item{
   list-style-type: none;
 }
+.REt{
+  margin-bottom: 5%;
+margin-top: 5%;
+
+}
+.Abou{
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.Best{
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.Privacy{
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+
 
 
 
@@ -34,6 +53,12 @@ margin-bottom: 5%;
 margin-top: 5%;
 margin-left: 5%;
 margin-right: 5%;}
+
+.shipp{
+  margin-bottom: 5%;
+margin-top: 5%;
+}
+
 
 
 @media (prefers-reduced-motion: no-preference) {

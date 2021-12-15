@@ -2,7 +2,7 @@ import React from 'react'
 
 function ShippingPolicy() {
     return (
-        <div><hr></hr>
+        <div className='shipp'><hr></hr>
             <h2>Order Confirmation</h2><hr></hr>
             <p>As soon as you place your order, you will receive an order confirmation e-mail.  This means that we have received your order in our system and pre-authorized your credit card for the purchase.  As soon as we receive your order, we automatically reach out to our suppliers to confirm that it is in stock and available for immediate shipment.  If your item is on backorder or unavailable, we will void the pre-authorization and reach out to you via e-mail. 
              If your item(s) are available for immediate shipment (within 5 business days), we will process the charges and submit the order for shipment.</p>

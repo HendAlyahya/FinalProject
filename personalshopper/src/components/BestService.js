@@ -2,8 +2,8 @@ import React from 'react'
 
 function BestService() {
     return (
-        <div>
-            <h1>Here are the best online personal Shopper Services to try:</h1>
+        <div className='Best'><hr></hr>
+            <h1>Here are the best online personal Shopper Services to try:</h1><hr></hr>
             <ul>
                 <li>Best premium styling service: Dailylook</li>
                 <li>Best styling service for customer service and rewards: Trunk Club</li>

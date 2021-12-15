@@ -7,6 +7,10 @@ import Shoper from './Shoper'
 import SingUp from './SingUp'
 import PaymentMethod from "./PaymentMethod"
 import ShippingPolicy from "./ShippingPolicy"
+import ReturnPolicy from "./ReturnPolicy"
+import AboutUs from "./AboutUs"
+import BestService from "./BestService"
+import PrivacyPolicy from "./PrivacyPolicy"
 
 
 
@@ -57,6 +61,10 @@ const Navbar = () => {
           <Route  path="/singup" element={<SingUp />} />
           <Route  path="/PaymentMethod" element={<PaymentMethod />} />
           <Route  path="/ShippingPolicy" element={<ShippingPolicy />} />
+          <Route  path="/ReturnPolicy" element={<ReturnPolicy />} />
+          <Route  path="/AboutUs" element={<AboutUs />} />
+          <Route  path="/BestService" element={<BestService />} />
+          <Route  path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           
  </Routes>  
 </div>

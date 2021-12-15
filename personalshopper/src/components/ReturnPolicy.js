@@ -2,8 +2,8 @@ import React from 'react'
 
 function ReturnPolicy() {
     return (
-        <div>
-          <h1>Return Policy</h1>  
+        <div className='REt'>
+          <h1>Return Policy</h1> <hr></hr> 
           <p>We accept order cancellation before the product is shipped or produced. If the order is cancelled you will get full refund. We cannot cancel the order if the product is already shipped out. 
               Returns (if applicable) We accept return on products. Customers  has the right to apply for return within 14 days after the receipt. 
 To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging. To complete your return, we require a receipt or proof of purchase. Please do not send your purchase back to the manufacturer. 
