@@ -68,7 +68,7 @@ const Navbar = () => {
           <Route  path="/BestService" element={<BestService />} />
           <Route  path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route  path="/Cart" element={<Cart />} />
-          <Route  path="/PersonalDitalis" element={<PersonalDitalis />} />
+          <Route  path="/PersonalDitalis/:id" element={<PersonalDitalis />} />
           
  </Routes>  
 </div>

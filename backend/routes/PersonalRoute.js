@@ -11,14 +11,14 @@ router.get("/getAll", (req, res) => {
 })
 
 
-Personal.insertMany(PersonalSeed,(err,Personals)=>{
-    if (err){console.log(err)}
-    console.log("added",Personals)
-});
+// Personal.insertMany(PersonalSeed,(err,Personals)=>{
+//     if (err){console.log(err)}
+//     console.log("added",Personals)
+// });
 
 router.get("/getPersonal/:id", async (req, res) => {
     try {
-        const user = await Personal.findById(req.params.id)
+        const user = await Personal.findById({_id:req.params.id})
         res.send(user);
     } catch (e) {
         res.status(500).send()
