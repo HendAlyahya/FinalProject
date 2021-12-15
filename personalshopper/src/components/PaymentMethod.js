@@ -2,7 +2,7 @@ import React from 'react'
 
 function PaymentMethod() {
     return (
-        <div>
+        <div className='Pay'>
          <h1>Payment Method:</h1> 
          <ul>
              <li>Cash</li>

@@ -27,6 +27,13 @@
   margin-top: 5%;
   margin-bottom: 5%;
 }
+.Pay{
+  display: grid;
+grid-template-columns: 1fr ;
+margin-bottom: 5%;
+margin-top: 5%;
+margin-left: 5%;
+margin-right: 5%;}
 
 
 @media (prefers-reduced-motion: no-preference) {
