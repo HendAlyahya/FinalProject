@@ -13,6 +13,9 @@ function PersonalDitalis() {
       }, []);
 
 
+      if (Loading){
+        return (<p>loading...</p>)
+    }
     return (
         <div>
             

@@ -12,6 +12,7 @@ import AboutUs from "./AboutUs"
 import BestService from "./BestService"
 import PrivacyPolicy from "./PrivacyPolicy"
 import Cart from "./Cart"
+import PersonalDitalis from "./PersonalDitalis"
 
 
 
@@ -67,6 +68,7 @@ const Navbar = () => {
           <Route  path="/BestService" element={<BestService />} />
           <Route  path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route  path="/Cart" element={<Cart />} />
+          <Route  path="/PersonalDitalis" element={<PersonalDitalis />} />
           
  </Routes>  
 </div>

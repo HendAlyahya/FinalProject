@@ -2,6 +2,7 @@ import React from 'react'
 import {useEffect , useState}from "react"
 import axios from "axios"
 import {Card, Button} from "react-bootstrap"
+import {Link} from "react-router-dom"
 
 function Shoper() {
     const [Personal,setPersonal]=useState([])
@@ -33,13 +34,13 @@ if (loading){
   <Card  style={{ width: '18rem' }}>
   <Card.Img variant="top" src={e.image} />
   <Card.Body>
-  <Card.Title>{e.name}</Card.Title>
+        <Card.Title>{e.name}</Card.Title>
       <Card.Text>{e.Phone}</Card.Text>
       <Card.Text>{e.Address}</Card.Text>
       <Card.Text>{e.gender}</Card.Text>
       <Card.Text>{e.userType}</Card.Text>
       <Card.Text>{e.email}</Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+    <Link to={`/PersonalDitalis/${e._id}`} ><Button variant="primary">Go somewhere</Button></Link>
   </Card.Body>
 </Card>
 
