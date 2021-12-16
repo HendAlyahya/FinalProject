@@ -23,7 +23,7 @@ const Navbar = () => {
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">Personal Shoper</a>
+    {/* <a className="navbar-brand" href="#">Personal Shoper</a> */}
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -37,7 +37,7 @@ const Navbar = () => {
         </li>
        
         <li className="nav-item">
-          <a className="nav-link disabled"> <Link to='/SingUp'>SingUp</Link></a>
+          <a className="nav-link "> <Link to="/SingUp">SingUp</Link></a>
         </li>
       </ul>
       <form className="d-flex">
