@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 
 function PersonalDitalis() {
     const [User,setUser]=useState()
-    const [Loading,setLoading]=useState()
+    const [Loading,setLoading]=useState(true)
     const {id}=useParams()
     useEffect(() => {
         axios.get(`http://localhost:8080/Personal/getPersonal/${id}`).then((res) => {
@@ -22,8 +22,8 @@ function PersonalDitalis() {
     }
     return (
         <div>
-            <p>{User.name}</p>
-            {User.proudct?.map((e)=>{
+            <p>{User.name}</p> 
+             {User.proudct?.map((e)=>{
               return(
                   <div>
      <h1>{e.name}</h1> 
