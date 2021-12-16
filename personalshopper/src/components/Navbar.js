@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes, Link , useNavigate} from "react-router-dom";
 import Home from './Home'
 import Shoper from './Shoper'
-import SingUp from './SingUp'
 import PaymentMethod from "./PaymentMethod"
 import ShippingPolicy from "./ShippingPolicy"
 import ReturnPolicy from "./ReturnPolicy"
@@ -13,6 +12,7 @@ import BestService from "./BestService"
 import PrivacyPolicy from "./PrivacyPolicy"
 import Cart from "./Cart"
 import PersonalDitalis from "./PersonalDitalis"
+import SingUp from "./SingUp"
 
 
 
@@ -37,7 +37,7 @@ const Navbar = () => {
         </li>
        
         <li className="nav-item">
-          <a className="nav-link disabled"href='/singup'>SingUp</a>
+          <a className="nav-link disabled"> <Link to='/SingUp'>SingUp</Link></a>
         </li>
       </ul>
       <form className="d-flex">
@@ -60,7 +60,6 @@ const Navbar = () => {
 <Routes>
           <Route exact path="/Home" element={<Home />} />
           <Route  path="/shoper" element={<Shoper />} />
-          <Route  path="/singup" element={<SingUp />} />
           <Route  path="/PaymentMethod" element={<PaymentMethod />} />
           <Route  path="/ShippingPolicy" element={<ShippingPolicy />} />
           <Route  path="/ReturnPolicy" element={<ReturnPolicy />} />
@@ -69,6 +68,7 @@ const Navbar = () => {
           <Route  path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route  path="/Cart" element={<Cart />} />
           <Route  path="/PersonalDitalis/:id" element={<PersonalDitalis />} />
+          <Route  path="/SingUp" element={<SingUp />} />
           
  </Routes>  
 </div>
