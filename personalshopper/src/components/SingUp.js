@@ -3,6 +3,7 @@ import {Card, Button,Form} from "react-bootstrap"
 import {AiFillFacebook} from "react-icons/ai";
 import {AiFillGoogleSquare} from "react-icons/ai";
 import {AiFillTwitterSquare} from "react-icons/ai";
+import {Link} from "react-dom"
 
 
 function SingUp() {
@@ -24,9 +25,11 @@ function SingUp() {
   <Form.Floating>
     <Form.Control id="floatingPasswordCustom" type="password" placeholder="Password"/>
     <label htmlFor="floatingPasswordCustom">Password</label>
-    <AiFillFacebook></AiFillFacebook>
-    <AiFillGoogleSquare></AiFillGoogleSquare>
-    <AiFillTwitterSquare></AiFillTwitterSquare>
+    <div className="iconStyle">
+ <a herf="https://www.facebook.com"><AiFillFacebook></AiFillFacebook></a>
+    <a herf="https://support.google.com"><AiFillGoogleSquare></AiFillGoogleSquare></a>
+    <a herf="https://twitter.com"><AiFillTwitterSquare></AiFillTwitterSquare></a>
+    </div>
   </Form.Floating>
 
     </Card.Text>
