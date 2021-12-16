@@ -26,18 +26,19 @@ function PersonalDitalis() {
             {User.proudct?.map((e)=>{
               return(
                   <div>
-     name: 
-    category: 
-    description: 
-    price:
-    image: 
-    comment:
+     <h1>{e.name}</h1> 
+     <h1>{e.category}</h1> 
+     <h1>{e.description}</h1> 
+     <h1>{e.price}</h1> 
+     <h1>{e.image}</h1> 
+     <h1>{e.comment}</h1> 
+    
+    
 
                       </div>
               )  
-            }}
+            })}
         </div>
-    )
-}
+    )}
 
 export default PersonalDitalis

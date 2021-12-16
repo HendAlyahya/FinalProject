@@ -37,7 +37,7 @@ const Navbar = () => {
         </li>
        
         <li className="nav-item">
-          <a className="nav-link disabled"href='/singuo'>SingUp</a>
+          <a className="nav-link disabled"href='/singup'>SingUp</a>
         </li>
       </ul>
       <form className="d-flex">
