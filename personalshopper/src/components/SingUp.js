@@ -25,6 +25,8 @@ function SingUp() {
   <Form.Floating>
     <Form.Control id="floatingPasswordCustom" type="password" placeholder="Password"/>
     <label htmlFor="floatingPasswordCustom">Password</label>
+    <p className="OR">OR</p>
+    
     <div className="iconStyle">
  <a herf="https://www.facebook.com"><AiFillFacebook></AiFillFacebook></a>
     <a herf="https://support.google.com"><AiFillGoogleSquare></AiFillGoogleSquare></a>

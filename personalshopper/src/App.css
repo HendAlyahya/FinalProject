@@ -82,6 +82,17 @@ font-weight: bolder;
 margin-left: 40%;
 }
 
+.OR{
+  display: flex;
+  text-align: center;
+font-size: xx-large;
+font-weight: bolder;
+margin-left: 43%;
+font-size:medium;
+font-style: oblique;
+
+}
+
 
 
 
