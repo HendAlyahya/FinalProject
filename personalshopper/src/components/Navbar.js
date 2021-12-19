@@ -19,6 +19,8 @@ import { BiHome ,BiLogOut ,BiLogIn  } from "react-icons/bi";
 import { FaSignOutAlt ,FaStore ,FaSearch } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa";
 
+import { GiWoodCabin } from "react-icons/gi";
+
 
 
 const Navbar = () => {
@@ -35,7 +37,7 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/Home"><BiHome></BiHome></a>
+          <a className="nav-link active" aria-current="page" href="/Home"><GiWoodCabin></GiWoodCabin></a>
         </li>
         <li className="nav-item">
           <a className="nav-link" > <Link to="/shoper"><FaStore></FaStore> </Link></a>
