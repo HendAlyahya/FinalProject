@@ -14,6 +14,10 @@ import Cart from "./Cart"
 import PersonalDitalis from "./PersonalDitalis"
 import SingUp from "./SingUp"
 import login from "./login"
+import { FiUserPlus } from "react-icons/fi";
+import { BiHome ,BiLogOut ,BiLogIn  } from "react-icons/bi";
+import { FaSignOutAlt ,FaStore ,FaSearch } from "react-icons/fa";
+import { FaUserEdit } from "react-icons/fa";
 
 
 
@@ -31,19 +35,25 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/Home">Home</a>
+          <a className="nav-link active" aria-current="page" href="/Home"><BiHome></BiHome></a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" > <Link to="/shoper">Shoper </Link></a>
+          <a className="nav-link" > <Link to="/shoper"><FaStore></FaStore> </Link></a>
         </li>
        
         <li className="nav-item">
-          <a className="nav-link "> <Link to="/SingUp">SingUp</Link></a>
+          <a className="nav-link "> <Link to="/SingUp"><FaUserEdit></FaUserEdit></Link></a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link "> <Link to="/login"><BiLogIn></BiLogIn></Link></a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link "> <Link to="/logout"><FaSignOutAlt></FaSignOutAlt></Link></a>
         </li>
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-        <button className="btn btn-outline-success" type="submit">Search</button>
+        <button className="btn btn-outline-success" type="submit"><FaSearch></FaSearch></button>
         
       </form>
       <li class="nav-item">
