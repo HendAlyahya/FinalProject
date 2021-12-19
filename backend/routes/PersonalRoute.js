@@ -18,7 +18,7 @@ router.get("/getAll", (req, res) => {
 
 router.get("/getPersonal/:id", async (req, res) => {
     try {
-        const user = await Personal.findById({_id:req.params.id})
+        const user = await Personal.findById({_id:req.params.id}).populate('proudct')
         res.send(user);
     } catch (e) {
         res.status(500).send()

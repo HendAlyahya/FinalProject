@@ -82,6 +82,15 @@ font-weight: bolder;
 margin-left: 40%;
 }
 
+.CardStyle{
+  /* border-radius: 100%;
+  padding-top: 20px; */
+}
+
+.CardDita{
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+}
 .OR{
   display: flex;
   text-align: center;

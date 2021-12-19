@@ -32,7 +32,7 @@ if (loading){
      
 
   <Card  style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={e.image} />
+  <Card.Img className="CardStyle" variant="top" src={e.image} />
   <Card.Body>
         <Card.Title>{e.name}</Card.Title>
       <Card.Text>{e.Phone}</Card.Text>

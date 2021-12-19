@@ -2,6 +2,8 @@ import React from 'react'
 import {useEffect , useState} from "react"
 import axios from "axios"
 import { useParams } from 'react-router-dom'
+import {Card, Button} from "react-bootstrap"
+
 
 
 function PersonalDitalis() {
@@ -26,12 +28,20 @@ function PersonalDitalis() {
              {User.proudct?.map((e)=>{
               return(
                   <div>
-     <h1>{e.name}</h1> 
-     <h1>{e.category}</h1> 
-     <h1>{e.description}</h1> 
-     <h1>{e.price}</h1> 
-     <h1>{e.image}</h1> 
-     <h1>{e.comment}</h1> 
+                    <Card className="CardDita">
+    <Card.Img variant="top" src={e.image} thumbnail/>
+    <Card.Body>
+      <Card.Title>{e.name}</Card.Title>
+      <Card.Text>{e.category}</Card.Text>
+      <Card.Text>{e.description}</Card.Text>
+      <Card.Text>{e.price}</Card.Text>
+      <Card.Text>{e.comment}</Card.Text>
+    </Card.Body>
+    <Card.Footer>
+      <small className="text-muted">Last updated 3 mins ago</small>
+    </Card.Footer>
+  </Card>
+    
     
     
 

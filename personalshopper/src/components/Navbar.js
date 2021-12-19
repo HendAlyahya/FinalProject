@@ -13,7 +13,7 @@ import PrivacyPolicy from "./PrivacyPolicy"
 import Cart from "./Cart"
 import PersonalDitalis from "./PersonalDitalis"
 import SingUp from "./SingUp"
-
+import login from "./login"
 
 
 
@@ -68,8 +68,8 @@ const Navbar = () => {
           <Route  path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route  path="/Cart" element={<Cart />} />
           <Route  path="/PersonalDitalis/:id" element={<PersonalDitalis />} />
-          <Route  path="/SingUp" element={<SingUp />} />
-          
+          <Route  path="/singUp" element={<SingUp />} />
+          <Route  path="/login" element={<login />} />
  </Routes>  
 </div>
 
