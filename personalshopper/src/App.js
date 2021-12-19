@@ -4,9 +4,9 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import { Route, Routes, Link , useNavigate} from "react-router-dom";
 import Shoper from './components/Shoper'
+import SingUp from './components/SingUp'
 import PaymentMethod from './components/PaymentMethod';
 import Footer from './components/Footer'
-
 
 
 
@@ -15,9 +15,8 @@ import Footer from './components/Footer'
 function App() {
   return (
     <div>
-  <Navbar></Navbar>;
+      <Navbar></Navbar>;
       <Footer/>
-
    
 
 

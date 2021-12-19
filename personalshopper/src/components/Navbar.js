@@ -18,7 +18,8 @@ import login from "./login"
 
 
 const Navbar = () => {
-    return (<div>
+    return (
+    <div>
 
 
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
