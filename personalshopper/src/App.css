@@ -86,10 +86,20 @@ margin-left: 40%;
   /* border-radius: 100%;
   padding-top: 20px; */
 }
+.NameofShoper{
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.NameStyle{
+  font-size: xx-large;
+  font-weight: bolder;
+
+}
 
 .CardDita{
   display: grid;
   grid-template-columns: 1fr 1fr ;
+  margin: 0;
 }
 .OR{
   display: flex;

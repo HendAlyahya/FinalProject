@@ -2,7 +2,9 @@ import React from 'react'
 import {useEffect , useState} from "react"
 import axios from "axios"
 import { useParams } from 'react-router-dom'
-import {Card, Button} from "react-bootstrap"
+// import {Card, Button, Col,Row} from "react-bootstrap"
+import { MDBCard, MDBCardBody, MDBCardText, MDBCardImage,MDBBtn} from 'mdb-react-ui-kit';
+
 
 
 
@@ -25,29 +27,28 @@ function PersonalDitalis() {
     return (
         <div>
             <p>{User.name}</p> 
+            <div className='CardDita'>
              {User.proudct?.map((e)=>{
               return(
-                  <div>
-                    <Card className="CardDita">
-    <Card.Img variant="top" src={e.image} thumbnail/>
-    <Card.Body>
-      <Card.Title>{e.name}</Card.Title>
-      <Card.Text>{e.category}</Card.Text>
-      <Card.Text>{e.description}</Card.Text>
-      <Card.Text>{e.price}</Card.Text>
-      <Card.Text>{e.comment}</Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
-  </Card>
-    
-    
-    
+                  <div className='CardDita'>
+                    
+    <MDBCard style={{ width: '18rem' }}>
+      <MDBCardImage src={e.image} alt='Sunset Over the Sea' position='top' />
+      <MDBCardBody>
+        <MDBCardText className='NameofShoper'>{e.name}</MDBCardText>
+        <MDBCardText>{e.category}</MDBCardText>
+        <MDBCardText>{e.description}</MDBCardText>
+        <MDBCardText>{e.price}</MDBCardText>
+        <MDBCardText>{e.comment}</MDBCardText>
+        <MDBBtn href='#'>Add TO Cart</MDBBtn>
 
-                      </div>
+      </MDBCardBody>
+    </MDBCard>
+  
+</div>
               )  
             })}
+            </div>
         </div>
     )}
 
