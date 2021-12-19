@@ -49,9 +49,9 @@ const Navbar = () => {
         <li className="nav-item">
           <a className="nav-link "> <Link to="/login"><BiLogIn></BiLogIn></Link></a>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a className="nav-link "> <Link to="/logout"><FaSignOutAlt></FaSignOutAlt></Link></a>
-        </li>
+        </li> */}
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>

@@ -13,6 +13,8 @@ import Footer from './components/Footer'
 
 
 function App() {
+  const getLocalStorage = localStorage.getItem("token")
+
   return (
     <div>
       <Navbar></Navbar>;
