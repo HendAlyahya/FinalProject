@@ -78,7 +78,12 @@ console.log(addPassword)
 <label for="exampleInputPassword1" class="form-label">Password</label>
 <input onChange = {(e)=> setAddPassword(e.target.value)} type="password" class="form-control" id="exampleInputPassword1"/>
 <label for="exampleInputTypeOfUser" class="form-label">Type Of User</label>
-<input onChange = {(e)=> setUser(e.target.value)} type="TypeOfUser" class="form-control" id="exampleInputTypeOfUser"/>
+{/* <input onChange = {(e)=> setUser(e.target.value)} type="TypeOfUser" class="form-control" id="exampleInputTypeOfUser"/> */}
+<select onChange = {(e)=> setUser(e.target.value)} type="TypeOfUser" id="exampleInputTypeOfUser">
+    <option value="1">Buyer</option>
+    <option value="2">Seller</option>
+    
+</select>
 
                        <p className="OR">OR</p>
 
