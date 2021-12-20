@@ -5,8 +5,10 @@ const CartSchema = new Schema ({
 
     cart:[{
         products:{type: Schema.Types.ObjectID,ref:"proudct"},
-        qty:{type: Number, default:1}
-    }]
+        qty:{type: Number, default:1},
+        subtotal:{type: Number}
+    }],
+    total:{type:Number}
 
 })
  

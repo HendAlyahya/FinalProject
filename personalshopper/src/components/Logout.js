@@ -10,7 +10,7 @@ const Logout = () => {
     const Logout = (e) => {
         e.preventDefault()
         // console.log("object");
-    }
+}
 
     return (
         <div>

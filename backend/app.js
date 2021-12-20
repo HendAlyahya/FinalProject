@@ -8,6 +8,7 @@ const cors = require("cors")
 const Pres=require('./routes/persRout')
 const cookieParser =require("cookie-parser")
 const {requireAuth, checkUser}=require("./midleware/midleware")
+const CartRouter =require("./routes/CartRoute")
 
 app.use(cors());
 app.use("/Personal",PersonalRouter);
@@ -16,6 +17,7 @@ app.use(Pres);
 // app.use(requireAuth)
 app.use(express.json())
 // app.get("*", checkUser)
+app.use("/cart",CartRouter)
 
 
 const uri = 'mongodb+srv://HendFawaz:fawaz9080-@cluster0.8fojf.mongodb.net/Project?retryWrites=true&w=majority';

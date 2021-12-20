@@ -18,8 +18,10 @@ import { FiUserPlus } from "react-icons/fi";
 import { BiHome ,BiLogOut ,BiLogIn  } from "react-icons/bi";
 import { FaSignOutAlt ,FaStore ,FaSearch } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa";
-
+import { AiOutlineHome ,AiOutlinePoweroff } from "react-icons/ai";  
+import { BsShopWindow } from "react-icons/bs";
 import { GiWoodCabin } from "react-icons/gi";
+import logout from "./Logout"
 
 
 
@@ -37,10 +39,10 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/Home"><GiWoodCabin></GiWoodCabin></a>
+          <a className="nav-link active" aria-current="page" href="/Home"><AiOutlineHome></AiOutlineHome></a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" > <Link to="/shoper"><FaStore></FaStore> </Link></a>
+          <a className="nav-link" > <Link to="/shoper"><BsShopWindow></BsShopWindow> </Link></a>
         </li>
        
         <li className="nav-item">
@@ -49,9 +51,9 @@ const Navbar = () => {
         <li className="nav-item">
           <a className="nav-link "> <Link to="/login"><BiLogIn></BiLogIn></Link></a>
         </li>
-        {/* <li className="nav-item">
-          <a className="nav-link "> <Link to="/logout"><FaSignOutAlt></FaSignOutAlt></Link></a>
-        </li> */}
+        <li className="nav-item">
+          <a className="nav-link "> <Link to="/logout"><AiOutlinePoweroff></AiOutlinePoweroff></Link></a>
+        </li>
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
@@ -83,6 +85,7 @@ const Navbar = () => {
           <Route  path="/PersonalDitalis/:id" element={<PersonalDitalis />} />
           <Route  path="/singUp" element={<SingUp />} />
           <Route  path="/login" element={<login />} />
+          <Route  path="/logout" element={<logout />} />
  </Routes>  
 </div>
 

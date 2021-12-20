@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const Personal = require("../modls/PersonalSchema");
-const Cart = require("../modls/CartSchema");
+// const Cart = require("../modls/CartSchema");
 const mongoose = require("mongoose")
 router.use(express.json());
 const PersonalSeed =require("../Personal_seed")
@@ -82,32 +82,32 @@ router.post("/addProudct", async (req, res) => {
     })
 })
 
-router.post("/addCart", async (req, res) => {
-    Personal.findById({ _id: req.body.personalId }).then(PUser => {
-        console.log("Find" + PUser)
-        if (PUser.cart == undefined) {
-            Cart.create({ cart: { proudcts: req.body.proudct, qty: req.body.qty } }).then(cart1 => {
-                console.log(cart1)
-                Personal.findByIdAndUpdate(req.body.personalId, { cart: cart1 }).then(async (user) => {
-                    await user.save()
-                    res.send(user)
-                }
-                )
-            }
-            )
-        } else {
-            console.log("hh")
-            Cart.findByIdAndUpdate(PUser.cart,{$push:{ cart: { proudcts: req.body.proudct, qty: req.body.qty } }}).then(async (cart1) => {
-                Personal.findByIdAndUpdate(req.body.personalId, { cart:cart1}).then(async (user) => {
-                    await user.save()
-                    res.send(user)
-                })
-            }
-            )
-        }
-    })
-}
-);
+// router.post("/addCart", async (req, res) => {
+//     Personal.findById({ _id: req.body.personalId }).then(PUser => {
+//         console.log("Find" + PUser)
+//         if (PUser.cart == undefined) {
+//             Cart.create({ cart: { proudcts: req.body.proudct, qty: req.body.qty } }).then(cart1 => {
+//                 console.log(cart1)
+//                 Personal.findByIdAndUpdate(req.body.personalId, { cart: cart1 }).then(async (user) => {
+//                     await user.save()
+//                     res.send(user)
+//                 }
+//                 )
+//             }
+//             )
+//         } else {
+//             console.log("hh")
+//             Cart.findByIdAndUpdate(PUser.cart,{$push:{ cart: { proudcts: req.body.proudct, qty: req.body.qty } }}).then(async (cart1) => {
+//                 Personal.findByIdAndUpdate(req.body.personalId, { cart:cart1}).then(async (user) => {
+//                     await user.save()
+//                     res.send(user)
+//                 })
+//             }
+//             )
+//         }
+//     })
+// }
+// );
 
 
 
