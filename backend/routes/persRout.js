@@ -5,7 +5,7 @@ router.use(express.json())
 
 
 
-router.post('/singup' , Pers.signup_post);
+router.post('/signup' , Pers.signup_post);
 
 
 router.post('/login' , Pers.login_post);

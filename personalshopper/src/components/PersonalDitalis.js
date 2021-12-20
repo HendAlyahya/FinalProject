@@ -19,6 +19,16 @@ function PersonalDitalis() {
           setLoading(false);
         });
       }, []);
+// \\\\\
+function AddCart(_id){
+  axios.post("http://localhost:8080/cart/cart/post",{
+    product:_id ,userId:"61beed3fa2391772e4a6d362",qty:2
+  }).then((res)=>{
+      console.log(res)
+  })
+
+}
+
 
 
       if (Loading){

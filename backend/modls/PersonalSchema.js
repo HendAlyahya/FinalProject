@@ -4,10 +4,10 @@ const { isEmail } = require("validator")
 const bcrypt = require("bcrypt")
 
 const PersonalSchema = new Schema({
-    name: { type: String, required: [true, "Personall name should be provided"] },
+    name: { type: String },
     Phone: { type: Number },
     Address: { type: String },
-    image: { type: String, required: [true, "Personall image should be provided"] },
+    image: { type: String },
     gender: { type: String },
     proudct:[{type: Schema.Types.ObjectId, ref:"proudct"}],
     cart:{type: Schema.Types.ObjectID,ref:"cart"},
