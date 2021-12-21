@@ -53,7 +53,7 @@ function Cart() {
                 {cart.map((elemnt)=>{
                     return(
                     <div >
-<MDBCard style={{ width: '18rem' }}>
+{/* <MDBCard style={{ width: '18rem' }}>
       <MDBCardImage src={elemnt.products.image} alt='Sunset Over the Sea' position='top' />
       <MDBCardBody>
         <MDBCardText className='NameofShoper'>{elemnt.products.name}</MDBCardText>
@@ -61,18 +61,55 @@ function Cart() {
         <MDBCardText>{elemnt.products.description}</MDBCardText>
         <MDBCardText>{elemnt.products.price}</MDBCardText>
         <Button  onClick={(e)=>deleteProduct(e,elemnt.products._id)} variant="outline-danger"><BsTrash></BsTrash></Button>{' '}
+        </MDBCardBody>
+    </MDBCard> */}
 
+<div >
+                      <div className="cart_items">
+                        <ul className="cart_list">
+                            <li className="cart_item clearfix">
+                                <div className="cart_item_image"><img src={elemnt.products.image} alt=""/></div>
+                                <div className="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                    <div className="cart_item_name cart_info_col">
+                                        <div className="cart_item_title">Name</div>
+                                        <div className="cart_item_text">{elemnt.products.name}</div>
+                                    </div>
+                                    <div className="cart_item_quantity cart_info_col">
+                                        <div className="cart_item_title">Quantity</div>
+                                        <div className="cart_item_text">{elemnt.products.qty}</div>
+                                    </div>
+                                    <div className="cart_item_Category cart_info_col">
+                                        <div className="cart_item_title">Category</div>
+                                        <div className="cart_item_text">{elemnt.products.category}</div>
+                                    </div>
+                                    {/* <div className="cart_item_description cart_info_col">
+                                        <div className="cart_item_title">Description</div>
+                                        <div className="cart_item_text">{elemnt.products.description}</div>
+                                    </div> */}
+                                    <div className="cart_item_price cart_info_col">
+                                        <div className="cart_item_title">Price</div>
+                                        <div className="cart_item_text">{elemnt.products.price}</div>
+                                    </div>
+                                    <div className="cart_item_total cart_info_col">
+                                        <div className="cart_item_title">Total</div>
+                                        <div className="cart_item_text">{elemnt.subtotal}</div>
+                                    </div>
+                                    <div class="cart_item_color cart_info_col">
+       <Button variant="outline-danger" onClick={(e)=>deleteProduct(e,elemnt.products._id)}><BsTrash></BsTrash></Button>{' '}  
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+            
 
-
-        
-
-      </MDBCardBody>
-    </MDBCard>
+                    </div>
                    
                     </div>)
                 })}
-                <h4>Total:{total}</h4>
-            </div>
+                
+               
+ </div>
         )
 }
 
