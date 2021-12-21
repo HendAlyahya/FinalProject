@@ -13,6 +13,7 @@ function Cart() {
     
     const [Loading,setLoading]=useState(true)
     const [cart,setCart]=useState([])
+    const [total , setTotal]=useState(); 
 
     let decodedData ;
   const storedToken = localStorage.getItem("token");
@@ -29,10 +30,20 @@ function Cart() {
         useEffect(() => {
             axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
                 console.log(res.data[0].cart);
+                setTotal(res.data[0].total);
                 setCart(res.data[0].cart)
               setLoading(false);
             });
           }, []);
+          const deleteProduct = (e,_id) => {
+            e.preventDefault()
+            console.log(_id)
+            axios.delete(`http://localhost:8080/cart/cart/delete/${decodedData.id}/${_id}`).then((response) => {
+            console.log(" deleted: ", response.data)
+            setCart(response.data.cart);
+            
+          })
+       }
         
           if (Loading){
             return (<p>loading...</p>)
@@ -49,7 +60,8 @@ function Cart() {
         <MDBCardText>{elemnt.products.category}</MDBCardText>
         <MDBCardText>{elemnt.products.description}</MDBCardText>
         <MDBCardText>{elemnt.products.price}</MDBCardText>
-        <Button variant="outline-danger"><BsTrash></BsTrash></Button>{' '}
+        <Button  onClick={(e)=>deleteProduct(e,elemnt.products._id)} variant="outline-danger"><BsTrash></BsTrash></Button>{' '}
+
 
 
         
@@ -59,6 +71,7 @@ function Cart() {
                    
                     </div>)
                 })}
+                <h4>Total:{total}</h4>
             </div>
         )
 }
