@@ -84,21 +84,25 @@ router.get("/cart/:userId", async (req, res) => {
 
 
     //////////// delete cart //////
-    router.delete('/cart/delete', (req, res) => {
+    router.delete('/cart/delete/:userId/:id',async (req, res) => {
         User.findById({ _id: req.params.userId }).then((user) => {
           Cart.findByIdAndUpdate(
             { _id: user.cart },
             {
               $pull: {
                 cart: {
-                  items: req.params.id,
+                    products: req.params.id,
                 },
               },
             }
-          ).then((cart) => {
+          ).populate('cart.products').then((cart) => {
             let subtotal;
+            console.log(cart.cart)
             cart.cart.forEach((element) => {
-              if (element.items == req.params.id) {
+                console.log(element.products._id)
+                console.log(req.params.id)
+                console.log(element.products._id == req.params.id)
+                if (element.products._id == req.params.id) {
                 console.log(element.subtotal);
                 subtotal = element.subtotal;
               }
@@ -110,7 +114,7 @@ router.get("/cart/:userId", async (req, res) => {
               }
             ).then(async (newCart) => {
               Cart.findById({ _id: newCart._id })
-                .populate("cart.items")
+                .populate("cart.products")
                 .then(async (newww) => {
                   console.log(newCart);
                   await newCart.save();
