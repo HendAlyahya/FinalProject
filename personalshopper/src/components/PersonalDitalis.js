@@ -71,7 +71,6 @@ function AddCart(_id){
         <MDBCardText>{element.price}</MDBCardText>
         <MDBCardText>{element.comment}</MDBCardText>
         <MDBBtn onClick= {()=> AddCart(element._id)}>Add TO Cart</MDBBtn>
-        <input  onChange = {(e)=> setQty(e.target.value)} type="number" name="qty" id="qty" value={qty}/>
 
         
 
