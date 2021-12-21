@@ -49,12 +49,12 @@ console.log(addPassword)
             setUser(res.data.user);
             if (res.data.user) {
                 console.log(res.data)
-                const token = res.data.user;
+                const token = res.data.token;
                 console.log(token)
                 localStorage.setItem("token", token);
                 const userSign = jwt(token);
                 console.log(userSign.userType)
-                if(userSign.type==="seller"){
+                if(userSign.userType==="seller"){
                     navigate(`/Seller/${userSign.id}`);
                 }else{
                     navigate(`/Buyer/${userSign.id}`);
@@ -77,11 +77,11 @@ console.log(addPassword)
 <input onChange = {(e)=> setAddEmail(e.target.value)} type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
 <label for="exampleInputPassword1" class="form-label">Password</label>
 <input onChange = {(e)=> setAddPassword(e.target.value)} type="password" class="form-control" id="exampleInputPassword1"/>
-<label for="exampleInputTypeOfUser" class="form-label">Type Of User</label>
+<label for="exampleInputTypeOfUser" class="form-label">Type Of User :</label>
 {/* <input onChange = {(e)=> setUser(e.target.value)} type="TypeOfUser" class="form-control" id="exampleInputTypeOfUser"/> */}
-<select onChange = {(e)=> setUser(e.target.value)} type="TypeOfUser" id="exampleInputTypeOfUser">
-    <option value="1">Buyer</option>
-    <option value="2">Seller</option>
+<select className='StSlec' onChange = {(e)=> setUser(e.target.value)} type="TypeOfUser" id="exampleInputTypeOfUser">
+    <option value="buyer">buyer</option>
+    <option value="seller">seller</option>
     
 </select>
 

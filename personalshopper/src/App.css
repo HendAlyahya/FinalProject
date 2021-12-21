@@ -66,6 +66,12 @@ margin-right: 5%;}
 margin-top: 5%;
 }
 
+.StSlec{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
 .SingupForm{
   margin-top:5%; 
   margin-bottom: 5%;
@@ -98,9 +104,17 @@ margin-left: 40%;
 }
 
 .CardDita{
+  /* border: 1px solid red; */
+
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 0;
+}
+.Cart0{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+margin-top: 5%;  
+margin-bottom: 5%;
 }
 .OR{
   display: flex;

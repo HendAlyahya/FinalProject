@@ -29,8 +29,8 @@ if (err.code === 11000){
 }
 
 const maxAge = 3* 24 * 60 * 60 ;
-const createToken = (id) => {
-    return jwt.sign({id}, 'net ninja secret', {
+const createToken = (id,email,userType) => {
+    return jwt.sign({id,email,userType}, 'net ninja secret', {
         expiresIn: maxAge
     })
 }
@@ -39,7 +39,7 @@ module.exports.signup_post = async (request,response) => {
     const {email, password,userType} = request.body;
    try {
       const user = await  User.create({email, password,userType})
-      const token = createToken(user._id)
+      const token = createToken(user._id,user.email,user.userType)
     //   res.cookie("jwt", token , {httpOnly: true , maxAge: maxAge * 1000 });
       response.status(201).json({user : user._id, token:token })
    }
@@ -53,7 +53,7 @@ module.exports.login_post = async (request,response) => {
     const {email, password} = request.body;
     try {
         const user = await  User.find({email, password})
-        const token = createToken(user._id)
+        const token = createToken(user._id,user.email,user.userType)
         // res.cookie("jwt", token , {httpOnly: true , maxAge: maxAge * 1000 });
         response.status(201).json({user : user._id, token:token })
      }

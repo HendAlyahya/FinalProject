@@ -22,10 +22,35 @@ import { AiOutlineHome ,AiOutlinePoweroff } from "react-icons/ai";
 import { BsShopWindow } from "react-icons/bs";
 import { GiWoodCabin } from "react-icons/gi";
 import logout from "./Logout"
+import axios from "axios"
+import jwt_decode from "jwt-decode";
+import {useEffect , useState} from "react"
 
 
 
 const Navbar = () => {
+  const [Loading,setLoading]=useState(true)
+  const [cart,setCart]=useState()
+
+  let decodedData ;
+const storedToken = localStorage.getItem("token");
+if (storedToken){
+  decodedData = jwt_decode(storedToken, { payload: true });
+   let expirationDate = decodedData.exp;
+    var current_time = Date.now() / 1000;
+    if(expirationDate < current_time)
+    {
+        localStorage.removeItem("token");
+    }
+ }
+ console.log(decodedData.id)
+      useEffect(() => {
+          axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
+              console.log(res.data[0].cart.length);
+              setCart(res.data[0].cart.length)
+            setLoading(false);
+          });
+        }, []);
     return (
     <div>
 
@@ -62,7 +87,7 @@ const Navbar = () => {
       </form>
       <li class="nav-item">
         <a class="nav-link" href="/Cart">
-          <span class="badge badge-pill bg-danger">1</span>
+          <span class="badge badge-pill bg-danger">{cart}</span>
           <span><i class="fas fa-shopping-cart"></i></span>
         </a>
       </li>

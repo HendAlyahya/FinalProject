@@ -9,7 +9,7 @@ router.get("/cart/:userId", async (req, res) => {
    User.findById({_id:req.params.userId})
         .then(user1=>{
             console.log(user1.cart)
-            Cart.find({_id:user1.cart}).populate('cart.proudct')
+            Cart.find({_id:user1.cart}).populate('cart.products')
             .then(cart=>{
                 res.send(cart)
             })
