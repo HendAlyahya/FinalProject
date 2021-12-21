@@ -5,6 +5,7 @@ import axios from "axios"
 import jwt_decode from "jwt-decode";
 import { MDBCard, MDBCardBody, MDBCardText, MDBCardImage,MDBBtn} from 'mdb-react-ui-kit';
 import {Button} from "react-bootstrap"
+import { BsTrash } from "react-icons/bs";
 
 
 
@@ -48,7 +49,7 @@ function Cart() {
         <MDBCardText>{elemnt.products.category}</MDBCardText>
         <MDBCardText>{elemnt.products.description}</MDBCardText>
         <MDBCardText>{elemnt.products.price}</MDBCardText>
-        <Button variant="outline-danger">Delete</Button>{' '}
+        <Button variant="outline-danger"><BsTrash></BsTrash></Button>{' '}
 
 
         

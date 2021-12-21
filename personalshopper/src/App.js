@@ -19,11 +19,7 @@ function App() {
     <div>
       <Navbar></Navbar>;
       <Footer/>
-   
-
-
-{/* //   <SingUp></SingUp> */}
-    </div>
+      </div>
   )
 
   

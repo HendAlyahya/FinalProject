@@ -25,6 +25,7 @@ import logout from "./Logout"
 import axios from "axios"
 import jwt_decode from "jwt-decode";
 import {useEffect , useState} from "react"
+import { FcSearch } from "react-icons/fc";
 
 
 
@@ -82,7 +83,7 @@ if (storedToken){
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-        <button className="btn btn-outline-success" type="submit"><FaSearch></FaSearch></button>
+        <button className="btn btn-outline-success" type="submit"><FcSearch></FcSearch></button>
         
       </form>
       <li class="nav-item">

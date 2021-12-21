@@ -81,4 +81,43 @@ router.get("/cart/:userId", async (req, res) => {
             }
         })
     })
+
+
+    //////////// delete cart //////
+    router.delete('/cart/delete', (req, res) => {
+        User.findById({ _id: req.params.userId }).then((user) => {
+          Cart.findByIdAndUpdate(
+            { _id: user.cart },
+            {
+              $pull: {
+                cart: {
+                  items: req.params.id,
+                },
+              },
+            }
+          ).then((cart) => {
+            let subtotal;
+            cart.cart.forEach((element) => {
+              if (element.items == req.params.id) {
+                console.log(element.subtotal);
+                subtotal = element.subtotal;
+              }
+            });
+            Cart.findByIdAndUpdate(
+              { _id: user.cart },
+              {
+                total: cart.total - subtotal,
+              }
+            ).then(async (newCart) => {
+              Cart.findById({ _id: newCart._id })
+                .populate("cart.items")
+                .then(async (newww) => {
+                  console.log(newCart);
+                  await newCart.save();
+                  res.send(newww);
+                });
+            }); 
+          });
+        });
+      })
 module.exports =router

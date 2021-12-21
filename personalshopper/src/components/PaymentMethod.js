@@ -1,14 +1,26 @@
 import React from 'react'
+import {Card} from "react-bootstrap"
 
 function PaymentMethod() {
     return (
-        <div className='Pay'><hr></hr>
-         <h1>Payment Method:</h1> <hr></hr>
-         <ul>
+        <div className='Pay'>
+        <Card>
+        <Card.Header><h1>Payment Method:</h1></Card.Header>
+        <Card.Body>
+          <blockquote className="blockquote mb-0">
+            <p>
+              {' '}
+              <ul>
              <li>Cash</li>
              <li>Electronic bank transfers</li>
-             </ul>  
-        </div>
+             </ul> 
+              {' '}
+            </p>
+            
+          </blockquote>
+        </Card.Body>
+      </Card>
+       </div>
     )
 }
 

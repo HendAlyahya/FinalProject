@@ -40,11 +40,11 @@ function AddCart(_id){
     product:_id ,userId:decodedData.id,qty:qty
   }).then((res)=>{
       console.log(res)
-      swal(
-        'Already Add To Cart!',
-        'You clicked the button!',
-        'success'
-      )
+      // swal(
+      //   'Already Add To Cart!',
+      //   'You clicked the button!',
+      //   'success'
+      // )
   })
 
 }
