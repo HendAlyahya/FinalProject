@@ -30,5 +30,25 @@ A site that provides you with personal shoppers to provide you with the latest f
 | `/Shoper/:Id`      | Shoper             | public `<Route>`   | Add, Delete and Edit a City                                  |
 
 
-| `/PlaceDetails/:countryId/:cityId/:placeId` | PlaceDetailsPage | public`<Route>` | Details of a Places                      |
+| `/PersonalDetails/:countryId/:cityId/:placeId` | PersonalDetails | public`<Route>` | Details of a Personal                      |
+
+
+### Git
+
+[Repository Link](https://github.com/HendAlyahya/FinalProject)
+
+
+
+### Slides
+
+[Slides Link](http://slides.com/)
+
+
+### Wireframe
+
+The url to your presentation slides
+
+### Figma
+
+[Figma Link](http://www.figma.com/file/GNvDVBD1NPTydU2PJy4DDM/dataBASE?node-id=0%3A88)
 
