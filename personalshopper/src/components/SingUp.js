@@ -6,12 +6,13 @@ import {AiFillTwitterSquare} from "react-icons/ai";
 import {Link} from "react-dom";
 import {useEffect , useState} from "react";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import {usenavegate} from "react-router-dom";
 import jwt from "jwt-decode";
+import {useNavigate} from "react-router-dom"
 
 
 const SingUp = () => { 
-  const navigate=useNavigate();
+  const navegate= useNavigate();
 
 //   const signupNew= (e) => {
 //       e.preventDefault()
@@ -22,7 +23,7 @@ const SingUp = () => {
 //       })
 //       .then((res) => {
 //           console.log(res)
-//           navigate("/login");
+//           navegate("/login");
 
           
 //         }
@@ -54,10 +55,10 @@ console.log(addPassword)
                 localStorage.setItem("token", token);
                 const userSign = jwt(token);
                 console.log(userSign.userType)
-                if(userSign.userType==="seller"){
-                    navigate(`/Seller/${userSign.id}`);
-                }else{
-                    navigate(`/Buyer/${userSign.id}`);
+                if(userSign.Type==="seller"){
+                    navegate(`/Seller/${userSign.id}`);
+                }else if(userSign.type==="buyer"){
+                    navegate(`/Buyer/${userSign.id}`);
               }
             }
             

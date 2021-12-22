@@ -30,7 +30,7 @@ A site that provides you with personal shoppers to provide you with the latest f
 | `/Shoper/:Id`      | Shoper             | public `<Route>`   | Add, Delete and Edit a City                                  |
 
 
-| `/PersonalDetails/:countryId/:cityId/:placeId` | PersonalDetails | public`<Route>` | Details of a Personal                      |
+| `/PersonalDetails` | PersonalDetails | public`<Route>` | Details of a Personal                      |
 
 
 ### Git
@@ -41,7 +41,7 @@ A site that provides you with personal shoppers to provide you with the latest f
 
 ### Slides
 
-[Slides Link](http://slides.com/)
+[Slides Link](https://www.canva.com/design/DAEzQI_r-QQ/0DjFBpjFQ5ewz3EhDjaToA/view?utm_content=DAEzQI_r-QQ&utm_campaign=designshare&utm_medium=link&utm_source=shareyourdesignpanel/)
 
 
 ### Wireframe
@@ -50,5 +50,9 @@ The url to your presentation slides
 
 ### Figma
 
-[Figma Link](http://www.figma.com/file/GNvDVBD1NPTydU2PJy4DDM/dataBASE?node-id=0%3A88)
+[Figma Link](https://www.figma.com/file/LyfNqSMoLzgsCP7vwuGfLF/Untitled?node-id=0%3A1)
+
+### Trello 
+
+[Trello Link] (https://trello.com/b/Rhbbnslz/project)
 
