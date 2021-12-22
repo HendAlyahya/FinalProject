@@ -104,7 +104,7 @@ function Cart() {
 
         )
 })}
-<div classNameName="order_total">
+<div classNameName="order_total1">
     <div classNameName="order_total_content text-md-right">
         <div classNameName="order_total_title">Order Total:</div>
         <div classNameName="order_total_amount">{total}</div>
