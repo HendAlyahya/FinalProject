@@ -21,7 +21,7 @@ import { FaUserEdit } from "react-icons/fa";
 import { AiOutlineHome ,AiOutlinePoweroff } from "react-icons/ai";  
 import { BsShopWindow } from "react-icons/bs";
 import { GiWoodCabin } from "react-icons/gi";
-import logout from "./Logout"
+// import logout from "./Logout"
 import axios from "axios"
 import jwt_decode from "jwt-decode";
 import {useEffect , useState} from "react"
@@ -32,7 +32,9 @@ import { FcSearch } from "react-icons/fc";
 const Navbar = () => {
   const [Loading,setLoading]=useState(true)
   const [cart,setCart]=useState()
-
+function logout(){
+  localStorage.removeItem("token")
+}
   let decodedData ;
 const storedToken = localStorage.getItem("token");
 if (storedToken){
@@ -44,13 +46,19 @@ if (storedToken){
         localStorage.removeItem("token");
     }
  }
- console.log(decodedData.id)
       useEffect(() => {
+        if(decodedData==undefined){
+          setCart(0)
+        }
+        else{
           axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
-              console.log(res.data[0].cart.length);
-              setCart(res.data[0].cart.length)
+            console.log(res.data);
+            console.log(res.data[0]?.cart?.length);
+            setCart(res.data[0]?.cart?.length)
             setLoading(false);
           });
+        }
+          
         }, []);
     return (
     <div>
@@ -67,19 +75,38 @@ if (storedToken){
         <li className="nav-item">
           <a className="nav-link active" aria-current="page" href="/Home"><AiOutlineHome></AiOutlineHome></a>
         </li>
-        <li className="nav-item">
+       
+       {(function(){
+         if(decodedData==undefined){
+           return(
+             <>
+              <li className="nav-item">
           <a className="nav-link" > <Link to="/shoper"><BsShopWindow></BsShopWindow> </Link></a>
         </li>
-       
-        <li className="nav-item">
+<li className="nav-item">
           <a className="nav-link "> <Link to="/SingUp"><FaUserEdit></FaUserEdit></Link></a>
         </li>
         <li className="nav-item">
           <a className="nav-link "> <Link to="/login"><BiLogIn></BiLogIn></Link></a>
         </li>
-        <li className="nav-item">
-          <a className="nav-link "> <Link to="/logout"><AiOutlinePoweroff></AiOutlinePoweroff></Link></a>
+        </>
+           )
+         }
+         else{
+           return(
+             <>
+             <li className="nav-item">
+          <a className="nav-link" > <Link to="/shoper"><BsShopWindow></BsShopWindow> </Link></a>
         </li>
+              <li className="nav-item">
+          <a className="nav-link " onClick={()=>{logout()}}> <  AiOutlinePoweroff></AiOutlinePoweroff></a>
+        </li>
+             </>
+           )
+         }
+       })()}
+        
+       
       </ul>
       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
@@ -111,7 +138,7 @@ if (storedToken){
           <Route  path="/PersonalDitalis/:id" element={<PersonalDitalis />} />
           <Route  path="/singUp" element={<SingUp />} />
           <Route  path="/login" element={<login />} />
-          <Route  path="/logout" element={<logout />} />
+          {/* <Route  path="/logout" element={<logout />} /> */}
  </Routes>  
 </div>
 
