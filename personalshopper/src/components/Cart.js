@@ -4,67 +4,93 @@ import axios from "axios"
 // import { useParams } from 'react-router-dom'
 import jwt_decode from "jwt-decode";
 import { MDBCard, MDBCardBody, MDBCardText, MDBCardImage, MDBBtn } from 'mdb-react-ui-kit';
-import { Button } from "react-bootstrap"
+import { Button , Alert } from "react-bootstrap"
 import { BsTrash } from "react-icons/bs";
+// import {render} from "react"
 
 
 
 function Cart() {
 
-    const [Loading, setLoading] = useState(true)
-    const [cart, setCart] = useState([])
-    const [total, setTotal] = useState();
+const [Loading, setLoading] = useState(true)
+const [cart, setCart] = useState([])
+const [total, setTotal] = useState();
 
-    let decodedData;
-    const storedToken = localStorage.getItem("token");
-    if (storedToken) {
-        decodedData = jwt_decode(storedToken, { payload: true });
-        let expirationDate = decodedData.exp;
-        var current_time = Date.now() / 1000;
-        if (expirationDate < current_time) {
-            localStorage.removeItem("token");
-        }
-    }
-    console.log(decodedData.id)
-    useEffect(() => {
-        axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
-            console.log(res.data[0].cart);
-            setTotal(res.data[0].total);
-            setCart(res.data[0].cart)
-            setLoading(false);
-        });
-    }, []);
-    const deleteProduct = (e, _id) => {
-        e.preventDefault()
-        console.log(_id)
-        axios.delete(`http://localhost:8080/cart/cart/delete/${decodedData.id}/${_id}`).then((response) => {
-            console.log(" deleted: ", response.data)
-            setCart(response.data.cart);
+let decodedData;
+const storedToken = localStorage.getItem("token");
+if (storedToken) {
+decodedData = jwt_decode(storedToken, { payload: true });
+let expirationDate = decodedData.exp;
+var current_time = Date.now() / 1000;
+if (expirationDate < current_time) {
+    localStorage.removeItem("token");
+}
+}
+console.log(decodedData.id)
+useEffect(() => {
+axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
+    console.log(res.data[0].cart);
+    setTotal(res.data[0].total);
+    setCart(res.data[0].cart)
+    setLoading(false);
+});
+}, []);
+//////////////
+// function AlertDismissible() {
+//     const [show, setShow] = useState(true);
 
-        })
-    }
+//     return (
+//       <>
+//         <Alert show={show} variant="success">
+//           <Alert.Heading>Thank you!</Alert.Heading>
+//           <p>
+//            your order has been confirmed and we will contact you shortly to set a date for receipt
+//           </p>
+//           <hr />
+//           <div className="d-flex justify-content-end">
+//             <Button onClick={() => setShow(false)} variant="outline-success">
+//               Close me!
+//             </Button>
+//           </div>
+//         </Alert>
 
-    if (Loading) {
-        return (<p>loading...</p>)
-    }
-    return (
-        <div className="Cart0">
-             <div class="cart_title">Shopping Cart</div>
-            {cart.map((elemnt) => {
-                return (
-                    <div >
-                        {/* <MDBCard style={{ width: '18rem' }}>
-      <MDBCardImage src={elemnt.products.image} alt='Sunset Over the Sea' position='top' />
-      <MDBCardBody>
-        <MDBCardText className='NameofShoper'>{elemnt.products.name}</MDBCardText>
-        <MDBCardText>{elemnt.products.category}</MDBCardText>
-        <MDBCardText>{elemnt.products.description}</MDBCardText>
-        <MDBCardText>{elemnt.products.price}</MDBCardText>
-        <Button  onClick={(e)=>deleteProduct(e,elemnt.products._id)} variant="outline-danger"><BsTrash></BsTrash></Button>{' '}
-        </MDBCardBody>
-    </MDBCard> */}
+//         {!show && <Button onClick={() => setShow(true)}>Show Alert</Button>}
+//       </>
+//     );
+//   }
+
+//   return (<AlertDismissible />);
 
 
+
+
+
+
+////////////
+
+
+
+
+const deleteProduct = (e, _id) => {
+e.preventDefault()
+console.log(_id)
+axios.delete(`http://localhost:8080/cart/cart/delete/${decodedData.id}/${_id}`).then((response) => {
+    console.log(" deleted: ", response.data)
+    setCart(response.data.cart);
+
+})
+}
+
+if (Loading) {
+return (<p>loading...</p>)
+}
+return (
+<div className="Cart0">
+        <div class="cart_title">Shopping Cart</div>
+    {cart.map((elemnt) => {
+        return (
+            <div >
+            
 <div className="cart_items">
 <ul className="cart_list">
 <li className="cart_item clearfix">
@@ -102,12 +128,17 @@ function Cart() {
 
 </div>
 
-        )
+)
 })}
+
+<div className='CardTot'>
 <div classNameName="order_total1">
     <div classNameName="order_total_content text-md-right">
-        <div classNameName="order_total_title">Order Total:</div>
-        <div classNameName="order_total_amount">{total}</div>
+        <div classNameName="order_total_title">Order Total:</div><br></br><hr></hr>
+        <div classNameName="order_total_amount">{total}</div><br></br><hr></hr>
+        <Button  variant="outline-success" >Confirm Your Order</Button>{' '}
+
+        </div>
     </div>
 </div>
 

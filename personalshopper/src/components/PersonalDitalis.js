@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import { MDBCard, MDBCardBody, MDBCardText, MDBCardImage,MDBBtn} from 'mdb-react-ui-kit';
 import jwt_decode from "jwt-decode";
 import swal from 'sweetalert2'
+import Proudct from "./Proudct"
 
 
 
@@ -60,9 +61,9 @@ function AddCart(_id){
             <div className='CardDita'>
              {User.proudct?.map((element)=>{
               return(
-                  <div className='CardDita'>
-                    
-    <MDBCard style={{ width: '18rem' }}>
+                  <div >
+                    <Proudct element={element}/>
+    {/* <MDBCard style={{ width: '18rem' }}>
       <MDBCardImage src={element.image} alt='Sunset Over the Sea' position='top' />
       <MDBCardBody>
         <MDBCardText className='NameofShoper'>{element.name}</MDBCardText>
@@ -76,7 +77,7 @@ function AddCart(_id){
         
 
       </MDBCardBody>
-    </MDBCard>
+    </MDBCard> */}
   
 </div>
               )  

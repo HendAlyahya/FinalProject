@@ -3,7 +3,7 @@
 ## Description
 A site that provides you with personal shoppers to provide you with the latest fashion.
 
-*DATABASE*** has been developed as a part of the final project in [mongooseDB](' 'mongodb+srv://HendFawaz:fawaz9080-@cluster0.8fojf.mongodb.net/Project?retryWrites=true&w=majority'')
+*DATABASE*** has been developed as a part of the final project in [mongooseDB](' 'mongodb+srv://HendFawaz@cluster0.8fojf.mongodb.net/Project?retryWrites=true&w=majority'')
 
 ## User Stories
 **Signup:** As a user I can sign up Register and view my profile and the products I have
@@ -19,15 +19,15 @@ A site that provides you with personal shoppers to provide you with the latest f
 
 ## React Router Routes (React App)
 
-| Path             | Component            | Permissions        | Behavior                                                     |
-| ---------------- | -------------------- | ------------------ | ------------------------------------------------------------ |
+| Path             | Component            | Permissions      | Behavior                                                     |
+| ---------------- | -------------------- | -----------------| ------------------------------------------------------------ |
 | `/`              | HomePage             | public `<Route>`   |  HomePage   
 
 | `/signup`        | SignupPage           | public `<Route>`   | Signup form, link to login, navigate to homepage after signup|
 
-| `/login`         | LoginPage            | public `<Route>`   | Login form, navigate to homepage after login                 |
+| `/login`         | LoginPage            | public `<Route>`   | Login form, navigate to homepage after login              |
 
-| `/Shoper/:Id`      | Shoper             | public `<Route>`   | Add, Delete and Edit a City                                  |
+| `/Shoper/:Id`    | Shoper             | public `<Route>`   | Add, Delete and Edit a                                   |
 
 
 | `/PersonalDetails` | PersonalDetails | public`<Route>` | Details of a Personal                      |

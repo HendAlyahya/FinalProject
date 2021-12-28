@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Nav} from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes, Link , useNavigate} from "react-router-dom";
 import Home from './Home'
@@ -62,66 +62,49 @@ if (storedToken){
         }, []);
     return (
     <div>
+      <Navbar expand="lg" variant="light" bg="light">
 
-
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <div className="container-fluid">
-    {/* <a className="navbar-brand" href="#">Personal Shoper</a> */}
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/Home"><AiOutlineHome></AiOutlineHome></a>
-        </li>
-       
-       {(function(){
+    <Navbar.Brand href="#">Navbar</Navbar.Brand>
+    <Nav.Link href="/Home"><AiOutlineHome></AiOutlineHome></Nav.Link>
+    {(function(){
          if(decodedData==undefined){
            return(
              <>
-              <li className="nav-item">
-          <a className="nav-link" > <Link to="/shoper"><BsShopWindow></BsShopWindow> </Link></a>
-        </li>
-<li className="nav-item">
-          <a className="nav-link "> <Link to="/SingUp"><FaUserEdit></FaUserEdit></Link></a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link "> <Link to="/login"><BiLogIn></BiLogIn></Link></a>
-        </li>
-        </>
+    <Nav.Link ><Link to="/shoper"><BsShopWindow></BsShopWindow></Link></Nav.Link>
+    <Nav.Link ><Link to="/SingUp"><FaUserEdit></FaUserEdit></Link></Nav.Link>
+    <Nav.Link ><Link to="/login"><BiLogIn></BiLogIn></Link></Nav.Link>
+   
+  </>
            )
          }
          else{
-           return(
-             <>
-             <li className="nav-item">
-          <a className="nav-link" > <Link to="/shoper"><BsShopWindow></BsShopWindow> </Link></a>
-        </li>
-              <li className="nav-item">
-          <a className="nav-link " onClick={()=>{logout()}}> <  AiOutlinePoweroff></AiOutlinePoweroff></a>
-        </li>
-             </>
+          return(
+            <>
+      <Nav.Link ><Link to="/shoper"><BsShopWindow></BsShopWindow> </Link></Nav.Link>
+      <Nav.Link ><Link t0="logout" onClick={()=>{logout()}}> <  AiOutlinePoweroff></AiOutlinePoweroff></Link></Nav.Link>
+
+           </>
            )
          }
        })()}
-        
-       
-      </ul>
-      <form className="d-flex">
+       <form className="d-flex">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
         <button className="btn btn-outline-success" type="submit"><FcSearch></FcSearch></button>
         
       </form>
+
       <li class="nav-item">
         <a class="nav-link" href="/Cart">
           <span class="badge badge-pill bg-danger">{cart}</span>
           <span><i class="fas fa-shopping-cart"></i></span>
         </a>
       </li>
-    </div>
-  </div>
-</nav>
+
+</Navbar>
+      
+
+
+      
 <div>
 
 </div>
