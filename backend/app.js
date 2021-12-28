@@ -9,6 +9,7 @@ const Pres=require('./routes/persRout')
 const cookieParser =require("cookie-parser")
 const {requireAuth, checkUser}=require("./midleware/midleware")
 const CartRouter =require("./routes/CartRoute")
+const Stripe =require("./routes/Stripe")
 
 app.use(cors());
 app.use("/Personal",PersonalRouter);
@@ -18,6 +19,7 @@ app.use(Pres);
 app.use(express.json())
 // app.get("*", checkUser)
 app.use("/cart",CartRouter)
+app.use("/payment",Stripe)
 
 
 const uri = 'mongodb+srv://HendFawaz:fawaz9080-@cluster0.8fojf.mongodb.net/Project?retryWrites=true&w=majority';

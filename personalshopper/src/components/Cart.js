@@ -138,6 +138,8 @@ return (
         <div classNameName="order_total_title">Order Total:</div><br></br><hr></hr>
         <div classNameName="order_total_amount">{total}</div><br></br><hr></hr>
         <Button  onClick={handleShow} variant="outline-success" >Confirm Your Order</Button>{' '}
+        <Button variant="outline-success" >Payment</Button>{' '}
+        
 
         </div>
     </div>
