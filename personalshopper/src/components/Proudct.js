@@ -58,21 +58,21 @@ function AddCart(_id){
 return (
         <div className='CardDita'>
             
-            <MDBCard style={{ width: '18rem' }}>
+            {/* <MDBCard style={{ width: '18rem' }}>
                 <MDBCardImage src={element.image} alt='Sunset Over the Sea' position='top' />
                 <MDBCardBody>
                 <MDBCardText className='NameofShoper'>{element.name}</MDBCardText>
                 <MDBCardText>{element.category}</MDBCardText>
                 <MDBCardText>{element.description}</MDBCardText>
                 <MDBCardText>{element.price}</MDBCardText>
-                <MDBCardText>{element.comment}</MDBCardText>
-                <MDBBtn onClick= {()=> AddCart(element._id)}>Add TO Cart</MDBBtn>
-                <input  onChange = {(e)=> setQty(e.target.value)} type="number" name="qty" id="qty" value={qty}/>
+                <MDBCardText>{element.comment}</MDBCardText> */}
+                {/* <MDBBtn onClick= {()=> AddCart(element._id)}>Add TO Cart</MDBBtn>
+                <input  onChange = {(e)=> setQty(e.target.value)} type="number" name="qty" id="qty" value={qty}/> */}
         
                 
         
-                </MDBCardBody>
-            </MDBCard>
+                {/* </MDBCardBody>
+            </MDBCard> */}
             
         </div>
 )

@@ -1,12 +1,23 @@
 import React from 'react'
 import {useState} from "react"
 import {Card, Form , Row ,Col, Button ,Modal} from "react-bootstrap"
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+
 
 function Footer() {
+  // Swal.fire({
+  //   position: 'top-end',
+  //   icon: 'success',
+  //   title: 'Your Have Been Registered Successfully',
+  //   showConfirmButton: false,
+  //   timer: 1500
+  // })
+     const [user, setUser] = useState()
 
     const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
+  const handleClose = () => {setShow(false); alert('Your Have Been Registered Successfully')}
     const handleShow = () => setShow(true);
 
     return (
@@ -24,10 +35,10 @@ function Footer() {
               <div className="col-md-5 col-12">
   
   
-                <div className="form-outline mb-4">
+                {/* <div className="form-outline mb-4">
                   <input type="email" id="form5Example27" className="form-control"></input>
                   <label className="form-label" for="form5Example27">Email address</label>
-                </div>
+                </div> */}
               </div>
               
       
@@ -144,9 +155,9 @@ function Footer() {
           </li>
         </ul>
       {/* </hr> */}
-        <div className="footer-copyright text-center py-3">© 2021 WP Studio , All Rights Reserved
+        {/* <div className="footer-copyright text-center py-3">© 2021 WP Studio , All Rights Reserved
           <a href="https://mdbootstrap.com/"></a>
-        </div>
+        </div> */}
      <div>
      
 
@@ -176,17 +187,22 @@ function Footer() {
 </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Submit
-          </Button>
+          <Button variant="secondary" onClick={handleClose} > Submit</Button>
+          <select className='StSlec' onChange = {(e)=> setUser(e.target.value)} type="TypeOfUser" id="exampleInputTypeOfUser">
+    <option value="buyer">buyer</option>
+    <option value="seller">seller</option>
+    
+</select>
          
         </Modal.Footer>
       </Modal>
+      
       </div>
       
       </footer>
         </div>
     )
+    
 }
 
 export default Footer

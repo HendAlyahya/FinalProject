@@ -7,6 +7,7 @@ import { MDBCard, MDBCardBody, MDBCardText, MDBCardImage, MDBBtn } from 'mdb-rea
 import { Button , Alert } from "react-bootstrap"
 import { BsTrash } from "react-icons/bs";
 // import {render} from "react"
+import {Modal} from "react-bootstrap"
 
 
 
@@ -15,6 +16,10 @@ function Cart() {
 const [Loading, setLoading] = useState(true)
 const [cart, setCart] = useState([])
 const [total, setTotal] = useState();
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
 
 let decodedData;
 const storedToken = localStorage.getItem("token");
@@ -36,31 +41,27 @@ axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
 });
 }, []);
 //////////////
-// function AlertDismissible() {
-//     const [show, setShow] = useState(true);
 
-//     return (
-//       <>
-//         <Alert show={show} variant="success">
-//           <Alert.Heading>Thank you!</Alert.Heading>
-//           <p>
-//            your order has been confirmed and we will contact you shortly to set a date for receipt
-//           </p>
-//           <hr />
-//           <div className="d-flex justify-content-end">
-//             <Button onClick={() => setShow(false)} variant="outline-success">
-//               Close me!
-//             </Button>
-//           </div>
-//         </Alert>
 
-//         {!show && <Button onClick={() => setShow(true)}>Show Alert</Button>}
-//       </>
-//     );
-//   }
+// function Conform() {
+// return(<>
+// <Modal.Dialog show={show} variant="success">
+//   <Modal.Header closeButton>
+//     <Modal.Title>Thank you!</Modal.Title>
+//   </Modal.Header>
 
-//   return (<AlertDismissible />);
+//   <Modal.Body>
+// <p>your order has been confirmed and we will contact you shortly to set a date for receipt</p>
+//   </Modal.Body>
 
+//   <Modal.Footer>
+//     <Button onClick={() => setShow(false)} variant="outline-success"> Close me!</Button>
+//   </Modal.Footer>
+// </Modal.Dialog>
+// </>
+// );
+// }
+// return (<Conform/>)
 
 
 
@@ -86,7 +87,7 @@ return (<p>loading...</p>)
 }
 return (
 <div className="Cart0">
-        <div class="cart_title">Shopping Cart</div>
+        <div class="cart_title1">Shopping Cart</div>
     {cart.map((elemnt) => {
         return (
             <div >
@@ -136,14 +137,27 @@ return (
     <div classNameName="order_total_content text-md-right">
         <div classNameName="order_total_title">Order Total:</div><br></br><hr></hr>
         <div classNameName="order_total_amount">{total}</div><br></br><hr></hr>
-        <Button  variant="outline-success" >Confirm Your Order</Button>{' '}
+        <Button  onClick={handleShow} variant="outline-success" >Confirm Your Order</Button>{' '}
 
         </div>
     </div>
 </div>
 
 
-
+<>
+<Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>successfully</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Your order has been successfully confirmed and we will contact you to schedule a pick-up date!</Modal.Body>
+        <Modal.Footer>
+          <Button  variant="outline-success" onClick={handleClose}>
+            Close
+          </Button>
+         
+        </Modal.Footer>
+      </Modal>
+</>
 
 
         </div>

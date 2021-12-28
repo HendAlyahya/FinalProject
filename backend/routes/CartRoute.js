@@ -107,12 +107,7 @@ router.get("/cart/:userId", async (req, res) => {
                 subtotal = element.subtotal;
               }
             });
-            Cart.findByIdAndUpdate(
-              { _id: user.cart },
-              {
-                total: cart.total - subtotal,
-              }
-            ).then(async (newCart) => {
+            Cart.findByIdAndUpdate({ _id: user.cart },{total: cart.total - subtotal,}).then(async (newCart) => {
               Cart.findById({ _id: newCart._id })
                 .populate("cart.products")
                 .then(async (newww) => {

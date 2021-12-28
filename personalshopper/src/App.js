@@ -16,7 +16,7 @@ function App() {
   const getLocalStorage = localStorage.getItem("token")
 
   return (
-    <div>
+    <div className='App'>
       <Navbar></Navbar>
       <Footer/>
       </div>

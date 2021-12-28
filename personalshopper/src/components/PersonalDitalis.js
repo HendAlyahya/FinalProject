@@ -63,7 +63,7 @@ function AddCart(_id){
               return(
                   <div >
                     <Proudct element={element}/>
-    {/* <MDBCard style={{ width: '18rem' }}>
+    <MDBCard style={{ width: '18rem' }}>
       <MDBCardImage src={element.image} alt='Sunset Over the Sea' position='top' />
       <MDBCardBody>
         <MDBCardText className='NameofShoper'>{element.name}</MDBCardText>
@@ -77,7 +77,7 @@ function AddCart(_id){
         
 
       </MDBCardBody>
-    </MDBCard> */}
+    </MDBCard>
   
 </div>
               )  
