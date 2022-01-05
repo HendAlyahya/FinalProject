@@ -8,19 +8,13 @@ import { Button , Alert } from "react-bootstrap"
 import { BsTrash } from "react-icons/bs";
 // import {render} from "react"
 import {Modal} from "react-bootstrap"
-
-
-
 function Cart() {
-
 const [Loading, setLoading] = useState(true)
 const [cart, setCart] = useState([])
 const [total, setTotal] = useState();
 const [show, setShow] = useState(false);
-
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
-
 let decodedData;
 const storedToken = localStorage.getItem("token");
 if (storedToken) {
@@ -40,6 +34,23 @@ axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
     setLoading(false);
 });
 }, []);
+
+// useEffect(()=>{
+//     const makeRequest = async () => {
+//         try {
+//             const res = await axios.post("http://localhost:8080/payment",{
+//                 tokenId:stripeToken.id,
+//                 amount: (cart.total/3.75)*100,  
+//             });
+          
+        
+
+
+//             } catch (error) {}
+//     }
+//     stripeToken && makeRequest();
+    
+// },[stripeToken,cart.total])
 //////////////
 
 
@@ -73,75 +84,67 @@ axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
 
 
 const deleteProduct = (e, _id) => {
-e.preventDefault()
-console.log(_id)
-axios.delete(`http://localhost:8080/cart/cart/delete/${decodedData.id}/${_id}`).then((response) => {
-    console.log(" deleted: ", response.data)
-    setCart(response.data.cart);
+    e.preventDefault()
+    console.log(_id)
+    axios.delete(`http://localhost:8080/cart/cart/delete/${decodedData.id}/${_id}`).then((response) => {
+        console.log(" deleted: ", response.data)
+        setCart(response.data.cart);
+    })
+    }
+    if (Loading) {
+    return (<p>loading...</p>)
+    }
+    return (
+    <div className="Cart0">
+            <div class="cart_title1">Shopping Cart</div>
+        {cart.map((elemnt) => {
+            return (
+                <div >
+                
+    <div className="cart_items">
+    <ul className="cart_list">
+    <li className="cart_item clearfix">
+    <div className="cart_item_image"><img src={elemnt.products.image} alt="" /></div>
+    <div className="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+    <div className="cart_item_name cart_info_col">
+    <div className="cart_item_title">Name</div>
+    <div className="cart_item_text">{elemnt.products.name}</div>
+    </div>
+    <div className="cart_item_quantity cart_info_col">
+    <div className="cart_item_title">Quantity</div>
+    <div className="cart_item_text">{elemnt.qty}</div>
+    </div>
+    <div className="cart_item_Category cart_info_col">
+    <div className="cart_item_title">Category</div>
+    <div className="cart_item_text">{elemnt.products.category}</div>
+    </div>
+    <div className="cart_item_price cart_info_col">
+    <div className="cart_item_title">Price</div>
+    <div className="cart_item_text">{elemnt.products.price}</div>
+    </div>
+    <div className="cart_item_total cart_info_col">
+    <div className="cart_item_title">Total</div>
+    <div className="cart_item_text">{elemnt.subtotal}</div>
+    </div>
+    <div class="cart_item_color cart_info_col">
+    <Button variant="outline-danger" onClick={(e) => deleteProduct(e, elemnt.products._id)}><BsTrash></BsTrash></Button>{' '}
+    </div>
+    </div>
+    </li>
+    </ul>
+    </div>
+    </div>
+    )
+    })}
+    <div className='CardTot'>
+    <div classNameName="order_total1">
+        <div classNameName="order_total_content text-md-right">
+            <div classNameName="order_total_title">Order Total:</div><br></br><hr></hr>
+            <div classNameName="order_total_amount">{total}</div><br></br><hr></hr>
+            <Button  onClick={handleShow} variant="outline-success" >Confirm Your Order</Button>{' '}
+            {/* <Button variant="outline-success" >Payment</Button>{' '} */}
 
-})
-}
-
-if (Loading) {
-return (<p>loading...</p>)
-}
-return (
-<div className="Cart0">
-        <div class="cart_title1">Shopping Cart</div>
-    {cart.map((elemnt) => {
-        return (
-            <div >
-            
-<div className="cart_items">
-<ul className="cart_list">
-<li className="cart_item clearfix">
-<div className="cart_item_image"><img src={elemnt.products.image} alt="" /></div>
-<div className="cart_item_info d-flex flex-md-row flex-column justify-content-between">
-<div className="cart_item_name cart_info_col">
-<div className="cart_item_title">Name</div>
-<div className="cart_item_text">{elemnt.products.name}</div>
-</div>
-<div className="cart_item_quantity cart_info_col">
-<div className="cart_item_title">Quantity</div>
-<div className="cart_item_text">{elemnt.qty}</div>
-</div>
-<div className="cart_item_Category cart_info_col">
-<div className="cart_item_title">Category</div>
-<div className="cart_item_text">{elemnt.products.category}</div>
-</div>
-
-<div className="cart_item_price cart_info_col">
-<div className="cart_item_title">Price</div>
-<div className="cart_item_text">{elemnt.products.price}</div>
-</div>
-<div className="cart_item_total cart_info_col">
-<div className="cart_item_title">Total</div>
-<div className="cart_item_text">{elemnt.subtotal}</div>
-</div>
-<div class="cart_item_color cart_info_col">
-<Button variant="outline-danger" onClick={(e) => deleteProduct(e, elemnt.products._id)}><BsTrash></BsTrash></Button>{' '}
-</div>
-</div>
-</li>
-</ul>
-</div>
-
-
-</div>
-
-)
-})}
-
-<div className='CardTot'>
-<div classNameName="order_total1">
-    <div classNameName="order_total_content text-md-right">
-        <div classNameName="order_total_title">Order Total:</div><br></br><hr></hr>
-        <div classNameName="order_total_amount">{total}</div><br></br><hr></hr>
-        <Button  onClick={handleShow} variant="outline-success" >Confirm Your Order</Button>{' '}
-        <Button variant="outline-success" >Payment</Button>{' '}
-        
-
-        </div>
+            </div>
     </div>
 </div>
 
@@ -160,10 +163,7 @@ return (
         </Modal.Footer>
       </Modal>
 </>
-
-
         </div>
     )
 }
-
-export default Cart
+export default Cart;
