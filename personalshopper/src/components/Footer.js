@@ -1,24 +1,11 @@
 import React from 'react'
-import {useState} from "react"
-import {Card, Form , Row ,Col, Button ,Modal} from "react-bootstrap"
-import Swal from 'sweetalert2/dist/sweetalert2.js'
 
 
 
 function Footer() {
-  // Swal.fire({
-  //   position: 'top-end',
-  //   icon: 'success',
-  //   title: 'Your Have Been Registered Successfully',
-  //   showConfirmButton: false,
-  //   timer: 1500
-  // })
-     const [user, setUser] = useState()
-
-    const [show, setShow] = useState(false);
-
-  const handleClose = () => {setShow(false); alert('Your Have Been Registered Successfully')}
-    const handleShow = () => setShow(true);
+  
+     
+ 
 
     return (
         <div>
@@ -35,16 +22,12 @@ function Footer() {
               <div className="col-md-5 col-12">
   
   
-                {/* <div className="form-outline mb-4">
-                  <input type="email" id="form5Example27" className="form-control"></input>
-                  <label className="form-label" for="form5Example27">Email address</label>
-                </div> */}
+               
               </div>
               
       
             </div>
       
-            {/* <hr className="clearfix w-100 d-md-none"></hr> */}
       
             <div className="col-md-2 mx-auto">
       
@@ -67,7 +50,6 @@ function Footer() {
       
             </div>
       
-            {/* <hr className="clearfix w-100 d-md-none"></hr> */}
       
             <div className="col-md-2 mx-auto">
       
@@ -88,7 +70,6 @@ function Footer() {
       
             </div>
       
-            {/* <hr className="clearfix w-100 d-md-none"></hr> */}
       
             <div className="col-md-2 mx-auto">
       
@@ -113,20 +94,7 @@ function Footer() {
       
         </div>
       
-        {/* <hr> */}
-      
-        <ul className="list-unstyled list-inline text-center py-2">
-          <li className="list-inline-item">
-            <h5 className="mb-1">Register for free</h5>
-          </li>
-          <li className="list-inline-item">
-            <a  className="btn btn-danger btn-rounded"   onClick={handleShow}>Sign up!</a>
-          </li>
-        </ul>
-      
-      {/* </hr>
-        <hr>
-       */}
+        
         <ul className="list-unstyled list-inline text-center">
           <li className="list-inline-item">
             <a className="btn-floating btn-fb mx-1">
@@ -154,50 +122,7 @@ function Footer() {
             </a>
           </li>
         </ul>
-      {/* </hr> */}
-        {/* <div className="footer-copyright text-center py-3">© 2021 WP Studio , All Rights Reserved
-          <a href="https://mdbootstrap.com/"></a>
-        </div> */}
-     <div>
      
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>SingUp</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-        <Form>
-  <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-    <Form.Label column sm="2">
-      E-mail
-    </Form.Label>
-    <Col sm="10">
-      <Form.Control type="email" placeholder="Enter Your Email" />
-    </Col>
-  </Form.Group>
-
-  <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-    <Form.Label column sm="2">
-      Password
-    </Form.Label>
-    <Col sm="10">
-      <Form.Control type="password" placeholder="Password" />
-    </Col>
-  </Form.Group>
-</Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose} > Submit</Button>
-          <select className='StSlec' onChange = {(e)=> setUser(e.target.value)} type="TypeOfUser" id="exampleInputTypeOfUser">
-    <option value="buyer">buyer</option>
-    <option value="seller">seller</option>
-    
-</select>
-         
-        </Modal.Footer>
-      </Modal>
-      
-      </div>
       
       </footer>
         </div>
