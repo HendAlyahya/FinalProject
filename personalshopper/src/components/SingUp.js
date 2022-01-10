@@ -6,31 +6,13 @@ import { AiFillTwitterSquare } from "react-icons/ai";
 import { Link } from "react-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { usenavegate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import jwt from "jwt-decode";
-import { useNavigate } from "react-router-dom"
 
 
 const SingUp = () => {
     const navegate = useNavigate();
-
-    //   const signupNew= (e) => {
-    //       e.preventDefault()
-    //       axios
-    //       .post('http://localhost:8080/singup',{
-    //           email:Email,
-    //           password:Password
-    //       })
-    //       .then((res) => {
-    //           console.log(res)
-    //           navegate("/login");
-
-
-    //         }
-    //         )
-
-    //      } 
-    const [addEmail, setAddEmail] = useState()
+     const [addEmail, setAddEmail] = useState()
     const [addPassword, setAddPassword] = useState()
     const [user, setUser] = useState()
 
@@ -57,8 +39,10 @@ const SingUp = () => {
                     console.log(userSign.userType)
                     if (userSign.Type === "seller") {
                         navegate(`/Seller/${userSign.id}`);
+                        navegate("/")
                     } else if (userSign.type === "buyer") {
                         navegate(`/Buyer/${userSign.id}`);
+                        navegate("/")
                     }
                 }
 
@@ -86,13 +70,13 @@ const SingUp = () => {
 
                             </select>
 
-                            <p className="OR">OR</p>
+                            {/* <p className="OR">OR</p>
 
                             <div className="iconStyle">
                                 <a herf="https://www.facebook.com"><AiFillFacebook></AiFillFacebook></a>
                                 <a herf="https://support.google.com"><AiFillGoogleSquare></AiFillGoogleSquare></a>
                                 <a herf="https://twitter.com"><AiFillTwitterSquare></AiFillTwitterSquare></a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                     <div class="modal-footer">

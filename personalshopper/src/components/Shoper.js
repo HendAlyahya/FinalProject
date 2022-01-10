@@ -3,6 +3,7 @@ import {useEffect , useState}from "react"
 import axios from "axios"
 import {Card, Button} from "react-bootstrap"
 import {Link} from "react-router-dom"
+import Comment from "../components/Comment"
 
 function Shoper() {
     const [Personal,setPersonal]=useState([])
@@ -42,6 +43,7 @@ if (loading){
       <Card.Text>{e.email}</Card.Text>
     <Link to={`/PersonalDitalis/${e._id}`} ><Button variant="primary">Go somewhere</Button></Link>
   </Card.Body>
+  <Comment></Comment>
 </Card>
 
 
