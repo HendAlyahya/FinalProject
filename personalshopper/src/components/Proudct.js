@@ -2,10 +2,7 @@ import React from 'react'
 import {useEffect , useState} from "react"
 import axios from "axios"
 import { useParams } from 'react-router-dom'
-// import {Card, Button, Col,Row} from "react-bootstrap"
-import { MDBCard, MDBCardBody, MDBCardText, MDBCardImage,MDBBtn} from 'mdb-react-ui-kit';
 import jwt_decode from "jwt-decode";
-import swal from 'sweetalert2'
 
 
 
@@ -43,11 +40,7 @@ function AddCart(_id){
       product:_id ,userId:decodedData.id,qty:qty
     }).then((res)=>{
         console.log(res)
-        // swal(
-        //   'Already Add To Cart!',
-        //   'You clicked the button!',
-        //   'success'
-        // )
+      
     })
   
   }
@@ -56,25 +49,8 @@ function AddCart(_id){
 
 
 return (
-        <div className='CardDita'>
-            
-            {/* <MDBCard style={{ width: '18rem' }}>
-                <MDBCardImage src={element.image} alt='Sunset Over the Sea' position='top' />
-                <MDBCardBody>
-                <MDBCardText className='NameofShoper'>{element.name}</MDBCardText>
-                <MDBCardText>{element.category}</MDBCardText>
-                <MDBCardText>{element.description}</MDBCardText>
-                <MDBCardText>{element.price}</MDBCardText>
-                <MDBCardText>{element.comment}</MDBCardText> */}
-                {/* <MDBBtn onClick= {()=> AddCart(element._id)}>Add TO Cart</MDBBtn>
-                <input  onChange = {(e)=> setQty(e.target.value)} type="number" name="qty" id="qty" value={qty}/> */}
-        
-                
-        
-                {/* </MDBCardBody>
-            </MDBCard> */}
-            
-        </div>
+        <>
+        </>
 )
 }
 

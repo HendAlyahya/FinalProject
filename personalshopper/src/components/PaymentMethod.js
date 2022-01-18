@@ -12,7 +12,7 @@ function PaymentMethod() {
               {' '}
               <ul>
              <li>Cash</li>
-             <li>Electronic bank transfers</li>
+             <li>Credit Card</li>
              </ul> 
               {' '}
             </p>

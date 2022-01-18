@@ -28,22 +28,29 @@
 .nav-item{
   list-style-type: none;
 }
+.BtnS{
+  margin-left:0%;
+  margin-top: 5%;
+}
 .REt{
   margin-bottom: 5%;
 margin-top: 5%;
-
+text-align: start;
 }
 .Abou{
   margin-bottom: 5%;
   margin-top: 5%;
+  text-align: start;
 }
 .Best{
   margin-bottom: 5%;
   margin-top: 5%;
+  text-align: start;
 }
 .Privacy{
   margin-bottom: 5%;
   margin-top: 5%;
+  text-align: start;
 }
 
 
@@ -62,11 +69,13 @@ grid-template-columns: 1fr ;
 margin-bottom: 5%;
 margin-top: 5%;
 margin-left: 5%;
-margin-right: 5%;}
+margin-right: 5%;
+text-align: start;}
 
 .shipp{
   margin-bottom: 5%;
 margin-top: 5%;
+text-align: start;
 }
 
 .StSlec{
@@ -272,6 +281,18 @@ font-style: oblique;
 
 .cart_item_total {
   text-align: center
+}
+
+.Login{
+  margin-right: 15%;
+}
+.SignUp{
+  margin-right: 24%;
+
+}
+.logout{
+color: #1266f1;
+
 }
 
 .CardTot{

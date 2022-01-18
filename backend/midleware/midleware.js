@@ -1,47 +1,44 @@
 const jwt = require('jsonwebtoken')
 const User = require('../modls/PersonalSchema')
-const requireAuth = (req, res, next) => {
-    const token = req.cookies.jwt
-    if(token){
-        jwt.verify(token,"net ninja secret",(err,decodedToken) => {
-            if(err){
-                console.log(err.message)
-                res.redirect('/login')
-            }
-            else{
-                console.log(decodedToken)
-               next()
-            }
-        })
-    }
-    else {
-        res.redirect('/login')
-    }
-}
-const checkUser = (req, res, next) => {
-    const token = req.cookies.jwt
-    console.log(req.cookies.jwt)
-    if(token){
-        jwt.verify(token, "net ninja secret",async (err, decodedToken) => {
-            if(err){
-                console.log(err.message)
-                res.locals.user = null
-                next()
-            }
-            else{
-                console.log(decodedToken)
-                let user = await User.findById(decodedToken.id)
-                res.locals.user = user
-                next()
+const requireUser = (request, response , next) => {
+
+    const token = request.cookies.jwt;
+    if (token) {
+        jwt.verify(token, 'Hend secret', (err,decodedToken) => {
+            if (err) {
+                console.log(err.message);
+                response.redirect('/Login')    
+            } else {
+                console.log(decodedToken);
+                next();
             }
         })
+
     }
     else {
-        res.locals.user = null
-        next()
+        response.redirect('/Login');
     }
 }
-module.exports = {
-    requireAuth,
-    checkUser
+
+const checkUser = (request,response,next) => {
+    const token = request.cookies.jwt;
+    if (token){
+        jwt.verify(token, 'Hend secret', (err,decodedToken) => {
+            if (err) {
+                console.log(err.message);
+                response.locals.user = null;
+                next() ;  
+            } else {
+                console.log(decodedToken);
+                let user =  User.findById(decodedToken.id);
+                response.locals.user = user;
+                next();
+            }
+        })
+    } else {
+        response.locals.user = null;
+        next();
+    }
 }
+
+module.exports = { requireUser, checkUser}

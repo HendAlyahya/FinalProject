@@ -6,6 +6,7 @@ const mongoose = require("mongoose")
 router.use(express.json());
 const PersonalSeed =require("../Personal_seed")
 const Proudct =require("../modls/proudctSchema")
+
 router.get("/getAll", (req, res) => {
     Personal.find({ userType: "seller" }).then((data) => { res.json(data) })
 })

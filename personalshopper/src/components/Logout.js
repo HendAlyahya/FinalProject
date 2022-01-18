@@ -1,7 +1,5 @@
 import axios from "axios";
 import React from "react";
-import { useState } from "react";
-import jwt from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 
 const Logout = () => {
@@ -9,12 +7,13 @@ const Logout = () => {
 
     const Logout = (e) => {
         e.preventDefault()
-        // console.log("object");
+navigate("/Home")
+
 }
 
     return (
         <div>
-            <button type="button" onClick={(e) => { Logout(e) }}>Log out</button>
+            <button type="button" onClick={(e) => { Logout(e) }}>Logout</button>
         </div>
     )
 }

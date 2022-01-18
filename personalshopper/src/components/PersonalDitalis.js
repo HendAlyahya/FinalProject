@@ -7,7 +7,7 @@ import { MDBCard, MDBCardBody, MDBCardText, MDBCardImage,MDBBtn} from 'mdb-react
 import jwt_decode from "jwt-decode";
 import swal from 'sweetalert2'
 import Proudct from "./Proudct"
-
+import Quantity from './Quantity'
 
 
 function PersonalDitalis() {
@@ -35,17 +35,13 @@ function PersonalDitalis() {
         });
       }, []);
 // \\\\\
+
 function AddCart(_id){
   console.log(qty)
   axios.post("http://localhost:8080/cart/cart/post",{
     product:_id ,userId:decodedData.id,qty:qty
   }).then((res)=>{
       console.log(res)
-      // swal(
-      //   'Already Add To Cart!',
-      //   'You clicked the button!',
-      //   'success'
-      // )
   })
 
 }
@@ -72,7 +68,7 @@ function AddCart(_id){
         <MDBCardText>{element.price}</MDBCardText>
         <MDBCardText>{element.comment}</MDBCardText>
         <MDBBtn onClick= {()=> AddCart(element._id)}>Add TO Cart</MDBBtn>
-        <input  onChange = {(e)=> setQty(e.target.value)} type="number" name="qty" id="qty" value={qty}/>
+<Quantity setQty={setQty} />
 
         
 

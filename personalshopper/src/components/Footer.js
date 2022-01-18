@@ -1,4 +1,6 @@
 import React from 'react'
+import {MDBIcon , MDBBtn} from 'mdb-react-ui-kit';
+
 
 
 
@@ -17,9 +19,12 @@ function Footer() {
       
             <div className="col-md-4 mx-auto">
       
-              <h5 className="font-weight-bold text-uppercase mt-3 mb-4">SIGN UP NOW & GET 10% OFF</h5>
-              <p>Get timely updates from your favorite products</p>
-              <div className="col-md-5 col-12">
+              <h6 className="font-weight-bold text-uppercase mt-3 mb-4">Enter your email to & GET 10% OFF</h6>
+            <input placeholder='Your Email address' type="email" id="form5Example25" class="form-control" />
+            <MDBBtn className='BtnS' outline rounded>Submit</MDBBtn>
+            
+
+              <div className="col-md-4 col-12">
   
   
                
@@ -30,21 +35,22 @@ function Footer() {
       
       
             <div className="col-md-2 mx-auto">
+              
       
-              <h5 className="font-weight-bold text-uppercase mt-3 mb-4">CONTACT INFO
-              </h5>
+              <h6 className="font-weight-bold text-uppercase mt-3 mb-4">CONTACT INFO
+              </h6>
       
               <ul className="list-unstyled">
                 <li>
-                  <a href="#!">Phone: 888-999-000-1425
+                  <a href="#!"><i className='fas fa-phone me-3'></i>888-999-000-1425
                   </a>
                 </li>
                 <li>
-                  <a href="#!">Email: azedw@mail.com
+                  <a href="#!"> <i className='fas fa-envelope me-3'></i>azedw@mail.com
                   </a>
                 </li>
                 <li>
-                  <a href="#!">Address: 22/1 natinoal city austria, dreem land, HuwaiLink 3</a>
+                  <a href="#!"><i className='fas fa-home me-3'></i>austria 99432 HuwaiLink 3</a>
                 </li>
             </ul>
       
@@ -53,7 +59,7 @@ function Footer() {
       
             <div className="col-md-2 mx-auto">
       
-              <h5 className="font-weight-bold text-uppercase mt-3 mb-4">COMPANY</h5>
+              <h6 className="font-weight-bold text-uppercase mt-3 mb-4">COMPANY</h6>
       
               <ul className="list-unstyled">
                 <li>
@@ -73,7 +79,7 @@ function Footer() {
       
             <div className="col-md-2 mx-auto">
       
-              <h5 className="font-weight-bold text-uppercase mt-3 mb-4">PAYMENT & SHIPPING</h5>
+              <h6 className="font-weight-bold text-uppercase mt-3 mb-4">PAYMENT & SHIPPING</h6>
       
               <ul className="list-unstyled">
                 <li>
@@ -93,37 +99,44 @@ function Footer() {
           </div>
       
         </div>
-      
-        
-        <ul className="list-unstyled list-inline text-center">
-          <li className="list-inline-item">
-            <a className="btn-floating btn-fb mx-1">
-              <i className="fab fa-facebook-f"> </i>
-            </a>
-          </li>
-          <li className="list-inline-item">
-            <a className="btn-floating btn-tw mx-1">
-              <i className="fab fa-twitter"> </i>
-            </a>
-          </li>
-          <li className="list-inline-item">
-            <a className="btn-floating btn-gplus mx-1">
-              <i className="fab fa-google-plus-g"> </i>
-            </a>
-          </li>
-          <li className="list-inline-item">
-            <a className="btn-floating btn-li mx-1">
-              <i className="fab fa-linkedin-in"> </i>
-            </a>
-          </li>
-          <li className="list-inline-item">
-            <a className="btn-floating btn-dribbble mx-1">
-              <i className="fab fa-dribbble"> </i>
-            </a>
-          </li>
-        </ul>
-     
-      
+      <div className='container p-4 pb-0'>
+        <section className='mb-4'>
+          <a
+            className='btn btn-primary btn-floating m-1'
+            style={{ backgroundColor: '#3b5998' }}
+            href='#!'
+            role='button'
+          >
+            <MDBIcon fab icon='facebook-f' />
+          </a>
+
+          <a
+            className='btn btn-primary btn-floating m-1'
+            style={{ backgroundColor: '#55acee' }}
+            href='#!'
+            role='button'
+          >
+            <MDBIcon fab icon='twitter' />
+          </a>
+
+          <a
+            className='btn btn-primary btn-floating m-1'
+            style={{ backgroundColor: '#dd4b39' }}
+            href='#!'
+            role='button'
+          >
+            <MDBIcon fab icon='google' />
+          </a>
+          <a
+            className='btn btn-primary btn-floating m-1'
+            style={{ backgroundColor: '#ac2bac' }}
+            href='#!'
+            role='button'
+          >
+            <MDBIcon fab icon='instagram' />
+          </a>
+           </section>
+      </div>
       </footer>
         </div>
     )

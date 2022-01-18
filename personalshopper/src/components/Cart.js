@@ -6,7 +6,6 @@ import jwt_decode from "jwt-decode";
 import { MDBCard, MDBCardBody, MDBCardText, MDBCardImage, MDBBtn } from 'mdb-react-ui-kit';
 import { Button , Alert } from "react-bootstrap"
 import { BsTrash } from "react-icons/bs";
-// import {render} from "react"
 import {Modal} from "react-bootstrap"
 function Cart() {
 const [Loading, setLoading] = useState(true)
@@ -96,6 +95,8 @@ const deleteProduct = (e, _id) => {
     }
     return (
     <div className="Cart0">
+        {cart.length !==0 ? 
+        <> 
             <div class="cart_title1">Shopping Cart</div>
         {cart.map((elemnt) => {
             return (
@@ -163,6 +164,10 @@ const deleteProduct = (e, _id) => {
         </Modal.Footer>
       </Modal>
 </>
+</>
+:
+<h1>cart is empty</h1>
+}
         </div>
     )
 }

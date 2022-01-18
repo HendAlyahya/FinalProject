@@ -12,15 +12,7 @@ import PrivacyPolicy from "./PrivacyPolicy"
 import Cart from "./Cart"
 import PersonalDitalis from "./PersonalDitalis"
 import SingUp from "./SingUp"
-import login from "./login"
-import { FiUserPlus } from "react-icons/fi";
-import { BiHome ,BiLogOut ,BiLogIn  } from "react-icons/bi";
-import { FaSignOutAlt ,FaStore ,FaSearch } from "react-icons/fa";
-import { FaUserEdit } from "react-icons/fa";
-import { AiOutlineHome ,AiOutlinePoweroff } from "react-icons/ai";  
-import { BsShopWindow } from "react-icons/bs";
-import { GiWoodCabin } from "react-icons/gi";
-import logout from "./Logout"
+import Login from "./Login"
 import axios from "axios"
 import jwt_decode from "jwt-decode";
 import {Navbar , Container, Nav , Button} from "react-bootstrap"
@@ -62,62 +54,14 @@ if (storedToken){
   return (
     
     <div>
-        {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <div className="container-fluid">
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/Home"><AiOutlineHome></AiOutlineHome></a>
-        </li>
-        {(function(){
-         if(decodedData==undefined){
-           return(
-             <>
-              <li className="nav-item">
-          <a className="nav-link" > <Link to="/shoper"><BsShopWindow></BsShopWindow> </Link></a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link "> <Link to="/SingUp"><FaUserEdit></FaUserEdit></Link></a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link "> <Link to="/login"><BiLogIn></BiLogIn></Link></a>
-        </li>
-        </>
-           )
-         }
-         else{
-           return(
-             <>
-             <li className="nav-item">
-          <a className="nav-link" > <Link to="/shoper"><BsShopWindow></BsShopWindow> </Link></a>
-        </li>
-              <li className="nav-item">
-          <a className="nav-link " onClick={()=>{logout()}}> <  AiOutlinePoweroff></AiOutlinePoweroff></a>
-        </li>
-             </>
-           )
-         }
-       })()}
 
-
-      </ul>
-     
-      <li class="nav-item">
-        <a class="nav-link" href="/Cart">
-          <span class="badge badge-pill bg-danger">{cart}</span>
-          <span><i class="fas fa-shopping-cart"></i></span>
-        </a>
-      </li>
-    </div>
-  </div>
-</nav> */}
 
 <Navbar bg="light" expand="lg">
   <Container fluid>
-    <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+    {/* <Navbar.Brand ><a class="navbar-brand" href="#">
+    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/7c830023820299.5632955c0ab83.jpg" width="100px" height="90px"/>
+  </a>
+    </Navbar.Brand> */}
     <Navbar.Toggle aria-controls="navbarScroll" />
     
     <Navbar.Collapse id="navbarScroll">
@@ -127,26 +71,25 @@ if (storedToken){
         navbarScroll
       >
         <Nav.Link><Link to="/Home">Home</Link></Nav.Link>
-        {(function(){
-         if(decodedData==undefined){
-           return(
-             <>
         <Nav.Link ><Link to="/shoper">Shopper </Link></Nav.Link>
-        <Nav.Link ><Link to="/SingUp">SingUp</Link></Nav.Link>
-        <Nav.Link ><Link to="/login">Login</Link></Nav.Link>
-        </>
-        )
-         }
-         else{
-           return(
-             <>
+        {storedToken ?
         
+        <Nav.Link > <a  className="logout" onClick={()=>{logout()}}>logout </a></Nav.Link>
 
-        <Nav.Link > <  AiOutlinePoweroff><a className="nav-link " onClick={()=>{logout()}}> </a></AiOutlinePoweroff></Nav.Link>
-        </>
-           )
-         }
-       })()}
+        :
+            <> 
+             <Nav.Link ><Link to="/SingUp">Singup</Link></Nav.Link>
+        <Nav.Link ><Link to="/login">Login</Link></Nav.Link>
+            </>
+       
+        }
+         
+          
+        
+         
+        
+         
+       
 
         
       </Nav>
@@ -173,8 +116,7 @@ if (storedToken){
           <Route  path="/Cart" element={<Cart />} />
           <Route  path="/PersonalDitalis/:id" element={<PersonalDitalis />} />
           <Route  path="/singUp" element={<SingUp />} />
-          <Route  path="/login" element={<login />} />
-          <Route  path="/logout" element={<logout />} />
+          <Route  path="/login" element={<Login />} />
           {/* <Route  path="/logout" element={<logout />} /> */}
  </Routes>  
 </div>
