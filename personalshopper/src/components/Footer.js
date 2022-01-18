@@ -1,12 +1,16 @@
 import React from 'react'
 import {MDBIcon , MDBBtn} from 'mdb-react-ui-kit';
+// import Swal from 'sweetalert2'
+
+const Swal = require('sweetalert2')
+
 
 
 
 
 function Footer() {
   
-     
+  
  
 
     return (
@@ -21,7 +25,17 @@ function Footer() {
       
               <h6 className="font-weight-bold text-uppercase mt-3 mb-4">Enter your email to & GET 10% OFF</h6>
             <input placeholder='Your Email address' type="email" id="form5Example25" class="form-control" />
-            <MDBBtn className='BtnS' outline rounded>Submit</MDBBtn>
+            <MDBBtn  className='BtnS' outline rounded  onClick={()=>{
+              
+  Swal.fire({
+    // position:'top',
+    icon: 'success',
+    title: 'success',
+    showConfirmButton: false,
+    timer: 1500
+  })
+
+            }}>Submit</MDBBtn>
             
 
               <div className="col-md-4 col-12">
