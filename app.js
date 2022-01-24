@@ -11,6 +11,7 @@ const {requireAuth, checkUser}=require("./midleware/midleware")
 const CartRouter =require("./routes/CartRoute")
 const Stripe =require("./routes/Stripe")
 const path = require("path");
+const PORT = process.env.PORT || 8080;
 
 app.use(cors());
 app.use("/Personal",PersonalRouter);
@@ -52,7 +53,7 @@ app.get("/read-cookies", (res,req)=>{
 
 
 
-const PORT = process.env.PORT || 8080;
+
 // app.listen(PORT);
 
 app.listen(process.env.PORT || 8080, () => {

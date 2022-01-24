@@ -20,7 +20,7 @@ export default function Login (){
 
     const login = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8080/login',{
+        axios.post('/login',{
             email: email,
             password: password,
         }).then((response) => {

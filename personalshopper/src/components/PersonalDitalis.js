@@ -28,7 +28,7 @@ function PersonalDitalis({setRefresh}) {
     const [Loading,setLoading]=useState(true)
     const {id}=useParams()
     useEffect(() => {
-        axios.get(`http://localhost:8080/Personal/getPersonal/${id}`).then((res) => {
+        axios.get(`/Personal/getPersonal/${id}`).then((res) => {
           console.log(res.data);
           setUser(res.data);
           setLoading(false);
@@ -39,7 +39,7 @@ function PersonalDitalis({setRefresh}) {
 
 function AddCart(_id){
   console.log(qty)
-  axios.post("http://localhost:8080/cart/cart/post",{
+  axios.post("/cart/cart/post",{
     product:_id ,userId:decodedData.id,qty:qty
   }).then((res)=>{
       console.log(res)

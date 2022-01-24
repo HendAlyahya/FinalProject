@@ -43,7 +43,7 @@ if (storedToken){
     setCart(0)
   }
   else{
-    axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
+    axios.get(`/cart/cart/${decodedData.id}`).then((res) => {
       console.log(res.data);
       console.log(res.data[0]?.cart?.length);
       setCart(res.data[0]?.cart?.length)

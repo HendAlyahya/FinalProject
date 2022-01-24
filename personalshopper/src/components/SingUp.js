@@ -21,7 +21,7 @@ export default function SignUp (){
     let navigate = useNavigate();
 
     const signup = (e) => {
-            axios.post(`http://localhost:8080/signup`,{
+            axios.post(`/signup`,{
              name,
              email,
              password,

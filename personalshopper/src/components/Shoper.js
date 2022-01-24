@@ -10,7 +10,7 @@ function Shoper() {
 
     
     useEffect(()=>{
-    axios.get("http://localhost:8080/Personal/getAll").then((res)=>{
+    axios.get("/Personal/getAll").then((res)=>{
         console.log(res)
         setPersonal(res.data)
         setLoading(false)

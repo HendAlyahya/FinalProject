@@ -25,7 +25,7 @@ if (expirationDate < current_time) {
 }
 console.log(decodedData.id)
 useEffect(() => {
-axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
+axios.get(`/cart/cart/${decodedData.id}`).then((res) => {
     // console.log(res.data[0].cart);
     setTotal(res.data[0].total);
     setCart(res.data[0].cart)
@@ -40,7 +40,7 @@ axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
 const deleteProduct = (e, _id) => {
     e.preventDefault()
     console.log(_id)
-    axios.delete(`http://localhost:8080/cart/cart/delete/${decodedData.id}/${_id}`).then((response) => {
+    axios.delete(`/cart/cart/delete/${decodedData.id}/${_id}`).then((response) => {
         console.log(" deleted: ", response.data)
         setCart(response.data.cart);
     })
