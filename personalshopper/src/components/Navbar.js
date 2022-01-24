@@ -12,7 +12,7 @@ import PrivacyPolicy from "./PrivacyPolicy"
 import Cart from "./Cart"
 import PersonalDitalis from "./PersonalDitalis"
 import SingUp from "./SingUp"
-import Login from "./login"
+import Login from "./Login"
 import axios from "axios"
 import jwt_decode from "jwt-decode";
 import {Navbar , Container, Nav , Button} from "react-bootstrap"
