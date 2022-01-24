@@ -21,6 +21,7 @@ const NavBar = () => {
   const [Loading,setLoading]=useState(true)
   const [cart,setCart]=useState()
   let navigate = useNavigate()
+  const [ refresh, setRefresh] = useState()
 
 function logout(){
 localStorage.removeItem("token")
@@ -47,10 +48,11 @@ if (storedToken){
       console.log(res.data[0]?.cart?.length);
       setCart(res.data[0]?.cart?.length)
       setLoading(false);
+      setRefresh(false)
     });
   }
     
-  }, []);
+  }, [refresh]);
   return (
     
     <div>
@@ -58,10 +60,7 @@ if (storedToken){
 
 <Navbar bg="light" expand="lg">
   <Container fluid>
-    {/* <Navbar.Brand ><a class="navbar-brand" href="#">
-    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/7c830023820299.5632955c0ab83.jpg" width="100px" height="90px"/>
-  </a>
-    </Navbar.Brand> */}
+  
     <Navbar.Toggle aria-controls="navbarScroll" />
     
     <Navbar.Collapse id="navbarScroll">
@@ -114,7 +113,7 @@ if (storedToken){
           <Route  path="/BestService" element={<BestService />} />
           <Route  path="/PrivacyPolicy" element={<PrivacyPolicy />} />
           <Route  path="/Cart" element={<Cart />} />
-          <Route  path="/PersonalDitalis/:id" element={<PersonalDitalis />} />
+          <Route  path="/PersonalDitalis/:id" element={<PersonalDitalis setRefresh={setRefresh} />} />
           <Route  path="/singUp" element={<SingUp />} />
           <Route  path="/login" element={<Login />} />
           {/* <Route  path="/logout" element={<logout />} /> */}

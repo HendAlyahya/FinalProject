@@ -1,7 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from "react"
 import axios from "axios"
-// import { useParams } from 'react-router-dom'
 import jwt_decode from "jwt-decode";
 import { MDBCard, MDBCardBody, MDBCardText, MDBCardImage, MDBBtn } from 'mdb-react-ui-kit';
 import { Button , Alert } from "react-bootstrap"
@@ -34,50 +33,6 @@ axios.get(`http://localhost:8080/cart/cart/${decodedData.id}`).then((res) => {
 });
 }, []);
 
-// useEffect(()=>{
-//     const makeRequest = async () => {
-//         try {
-//             const res = await axios.post("http://localhost:8080/payment",{
-//                 tokenId:stripeToken.id,
-//                 amount: (cart.total/3.75)*100,  
-//             });
-          
-        
-
-
-//             } catch (error) {}
-//     }
-//     stripeToken && makeRequest();
-    
-// },[stripeToken,cart.total])
-//////////////
-
-
-// function Conform() {
-// return(<>
-// <Modal.Dialog show={show} variant="success">
-//   <Modal.Header closeButton>
-//     <Modal.Title>Thank you!</Modal.Title>
-//   </Modal.Header>
-
-//   <Modal.Body>
-// <p>your order has been confirmed and we will contact you shortly to set a date for receipt</p>
-//   </Modal.Body>
-
-//   <Modal.Footer>
-//     <Button onClick={() => setShow(false)} variant="outline-success"> Close me!</Button>
-//   </Modal.Footer>
-// </Modal.Dialog>
-// </>
-// );
-// }
-// return (<Conform/>)
-
-
-
-
-
-////////////
 
 
 
@@ -143,7 +98,6 @@ const deleteProduct = (e, _id) => {
             <div classNameName="order_total_title">Order Total:</div><br></br><hr></hr>
             <div classNameName="order_total_amount">{total}</div><br></br><hr></hr>
             <Button  onClick={handleShow} variant="outline-success" >Confirm Your Order</Button>{' '}
-            {/* <Button variant="outline-success" >Payment</Button>{' '} */}
 
             </div>
     </div>

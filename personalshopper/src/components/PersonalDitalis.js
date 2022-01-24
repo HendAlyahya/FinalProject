@@ -10,7 +10,7 @@ import Proudct from "./Proudct"
 import Quantity from './Quantity'
 
 
-function PersonalDitalis() {
+function PersonalDitalis({setRefresh}) {
   let decodedData ;
   const storedToken = localStorage.getItem("token");
   if (storedToken){
@@ -32,6 +32,7 @@ function PersonalDitalis() {
           console.log(res.data);
           setUser(res.data);
           setLoading(false);
+          setRefresh(false)
         });
       }, []);
 // \\\\\
@@ -58,7 +59,7 @@ function AddCart(_id){
              {User.proudct?.map((element)=>{
               return(
                   <div >
-                    <Proudct element={element}/>
+                    <Proudct element={element} setRefresh={setRefresh}/>
     <MDBCard style={{ width: '18rem' }}>
       <MDBCardImage src={element.image} alt='Sunset Over the Sea' position='top' />
       <MDBCardBody>

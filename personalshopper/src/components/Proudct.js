@@ -7,7 +7,7 @@ import jwt_decode from "jwt-decode";
 
 
 
-function Proudct({element}) {
+function Proudct({element , setRefresh}) {
     let decodedData ;
     const storedToken = localStorage.getItem("token");
     if (storedToken){
@@ -40,6 +40,7 @@ function AddCart(_id){
       product:_id ,userId:decodedData.id,qty:qty
     }).then((res)=>{
         console.log(res)
+        setRefresh(true)
       
     })
   
