@@ -6,7 +6,7 @@ import jwt from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 
 
-export default function Login (){
+const Login= ()=>{
 
     
     const [email,setEmail] = useState();
@@ -69,3 +69,4 @@ export default function Login (){
     )
 }
 
+export default Login

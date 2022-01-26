@@ -19,7 +19,7 @@ app.use(Pres);
 app.use(cookieParser())
 // app.use(requireAuth)
 app.use(express.json())
-app.get("*", checkUser)
+// app.get("*", checkUser)
 app.use("/cart",CartRouter)
 app.use("/payment",Stripe)
 
