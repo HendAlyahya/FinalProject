@@ -4,7 +4,7 @@
   "description": "",
   "main": "PersonalShober.js",
   "scripts": {
-    "start": "node app",
+    "start": "nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon app.js",
     "build": "cd personalshopper && npm run build",
